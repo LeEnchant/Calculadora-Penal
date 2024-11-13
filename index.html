@@ -54,7 +54,7 @@
 		</div>
 		<div class="col col-md-12">
 			<input id="Art. 0.4 - Invasão de departamento policial" type="checkbox" class="form-check-input" name="crime"
-				value="100|100000|NA" onclick="calcular()">
+				value="100|100000|200000" onclick="calcular()">
 			<label class="form-check-label" title="É o ato de invadir uma área policial ou departamento sem autorização de algum oficial em serviço."
 			 for="Art. 0.4 - Invasão de departamento policial">Art. 0.4 - Invasão de departamento policial**</label>
 		</div>
@@ -94,7 +94,7 @@
 			<input id="Art. 1.5 - Homicídio Culposo no Trânsito" type="checkbox" class="form-check-input" name="crime"
 				value="30|150000|250000" onclick="calcular()">
 			<label class="form-check-label" title="É aquele em que tipicamente se fala que a morte ocorreu por causa da ação do acusado, mas que não houve a intenção de matar. 
-			" for="Art. 1.5 - Homicídio Culposo no Trânsito">Art. 1.4 - Homicídio Culposo no Trânsito
+			" for="Art. 1.5 - Homicídio Culposo no Trânsito">Art. 1.5 - Homicídio Culposo no Trânsito
 		</label>
 		</div>
 		<!--
@@ -137,8 +137,9 @@
 			" for="Art. 2.2 - Sequestro">Art. 2.2 - Sequestro**</label>
 		</div>
 		<div class="col col-md-12">
-	<input id="Art. 2.3 - Cárcere Privado" type="checkbox" class="form-check-input" name="crime" value="15|50000|NA" onclick="calcular()">
-	<label class="form-check-label" for="Art. 2.3 - Cárcere Privado">Art. 2.3 - Cárcere Privado**</label>
+	<input id="Art. 2.3 - Cárcere Privado" type="checkbox" class="form-check-input" name="crime" value="50|200000|NA" onclick="calcular()">
+	<label class="form-check-label" title="Deter, ou prender alguém indevidamente e contra sua vontade. No crime do Cárcere Privado, a vítima quase não tem como se locomover, sua liberdade fica restrita a um pequeno espaço físico, como um quarto ou banheiro. 
+			" for="Art. 2.3 - Cárcere Privado">Art. 2.3 - Cárcere Privado</label>
 		</div>
 		<hr>
 
@@ -160,7 +161,7 @@
 		<div class="col col-md-12">
 			<input id="Art. 3.2 - Receptação de Veículos" type="checkbox" class="form-check-input" name="crime"
 				value="35|50000|65000" onclick="calcular()">
-			<label class="form-check-label" title="Estar de posse de qualquer veiculo roubado
+			<label class="form-check-label" title="Posse de qualquer veículo roubado consigo.
 			" for="Art. 3.2 - Receptação de Veículos">Art. 3.2 - Receptação de Veículos
 			</label>
 		</div>
@@ -178,7 +179,7 @@
 		</div> 
 		<div class="col col-md-12">
 			<input id="Art. 3.5 - Invasão de Propriedade" type="checkbox" class="form-check-input" name="crime" value="15|40000|55000" onclick="calcular()">
-	<label class="form-check-label" for="Art. 3.5 - Invasão de Propriedade">Art. 3.5 - Invasão de Propriedade</label>
+	<label class="form-check-label" title="Entrar ou permanecer na sua casa contra sua vontade." for="Art. 3.5 - Invasão de Propriedade">Art. 3.5 - Invasão de Propriedade</label>
 	</div> 
 	<div class="col col-md-12">
 		<input id="Art. 3.6 - Apropriação indébita " type="checkbox" class="form-check-input" name="crime" value="30|40000|55000" onclick="calcular()">
@@ -232,7 +233,7 @@
 		<div class="col col-md-12">
 			<input id="Art. 5.3 - Tráfico de Armas" type="checkbox" class="form-check-input" name="crime"
 				value="60|300000|400000" onclick="calcular()">
-			<label class="form-check-label" title="(3 ou + Armamentos) Salvo se for pego em ato de venda ou em mandados , aí a quantidade considerada será a partir de 1 un.
+			<label class="form-check-label" title="(3 ou + Armamentos).
 " for="Art. 5.3 - Tráfico de Armas">Art. 5.3 - Tráfico de Armas </label>
 		</div>
 		<div class="col col-md-12">
@@ -257,7 +258,7 @@
 		</div>
 		<div class="col col-md-12">
 			<input id="Art. 5.7 - Posse de Arma Branca" type="checkbox" class="form-check-input" name="crime"
-				value="0|30000|0" onclick="calcular()">
+				value="1|30000|0" onclick="calcular()">
 			<label class="form-check-label" title="Posse de qualquer ferramenta de que possa ser utilizada como arma corpo-a-corpo de maneira imprudente.
 			" for="Art. 5.7 - Posse de Arma Branca">Art. 5.7 - Posse de Arma Branca
 			</label>
@@ -270,10 +271,17 @@
 			</label>
 		</div>
 		<div class="col col-md-12">
-			<input id="Art. 5.9 - Tráfico de equipamento balistico" type="checkbox" class="form-check-input" name="crime"
+			<input id="Art. 5.9 - Condução de Itens Ilegais" type="checkbox" class="form-check-input" name="crime"
+				value="50|100000|200000" onclick="calcular()">
+			<label class="form-check-label" title="Se enquadra como condução de itens ilegais o ato em flagrante de transportar no porta malas independente do tipo de veículo ou proprietário. (armas, peças de armas, cápsula, munição, arma branca, drogas, narcotráfico, equipamento restrito e etc...).
+			" for="Art. 5.9 - Condução de Itens Ilegais">Art. 5.9 - Condução de Itens Ilegais
+			</label>
+		</div>
+				<div class="col col-md-12">
+			<input id="Art. 5.10 - Tráfico de equipamento balistico" type="checkbox" class="form-check-input" name="crime"
 				value="50|100000|200000" onclick="calcular()">
 			<label class="form-check-label" title="Se enquadra como tráfego de equipamento balístico portar 5 ou mais coletes.
-			" for="Art. 5.9 - Tráfico de equipamento balistico">Art. 5.10 - Tráfico de equipamento balistico
+			" for="Art. 5.10 - Tráfico de equipamento balistico">Art. 5.10 - Tráfico de equipamento balistico
 			</label>
 		</div>
 		<!-- <div class="col col-md-12">
@@ -312,7 +320,7 @@
 
 	<div class="col col-md-12">
 		<input id="Art. 6.3 - Posse de Drogas (1 a 5)" type="checkbox" class="form-check-input" name="crime"
-			value="0|30000|0" onclick="calcular()">
+			value="1|30000|0" onclick="calcular()">
 		<label class="form-check-label" title="Abaixo de 6, apenas apreender
 		" for="Art. 6.3 - Posse de Drogas (1 a 5)">Art. 6.3 - Posse de Drogas (1 a
 			5)</label>
@@ -411,7 +419,7 @@
 
 		<div class="col col-md-12">
 			<input id="Art. 10.0 - Posse de Arma em Público" type="checkbox" class="form-check-input" name="crime"
-				value="50|100000|130000" onclick="calcular()">
+				value="10|250000|50000" onclick="calcular()">
 			<label class="form-check-label" title="Intencionalmente ou conscientemente colocando outra pessoa com medo de lesões corporais.
 			" for="Art. 10.0 - Posse de Arma em Público">Art. 10.0 - Posse de Arma em Público</label>
 		</div>
