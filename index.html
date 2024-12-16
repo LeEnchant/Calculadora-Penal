@@ -69,7 +69,6 @@
 			<label class="form-check-label" title="É o ato de invadir uma área policial ou departamento sem autorização de algum oficial em serviço."
 			 for="Art. 0.4 - Invasão de departamento policial">Art. 0.4 - Invasão de departamento policial**</label>
 		</div>
-
 		<h3>
 			<font color="#022d42">CRIMES CONTRA A VIDA:</font>
 		</h3>
@@ -152,10 +151,8 @@
 	<label class="form-check-label" title="Deter, ou prender alguém indevidamente e contra sua vontade. No crime do Cárcere Privado, a vítima quase não tem como se locomover, sua liberdade fica restrita a um pequeno espaço físico, como um quarto ou banheiro. 
 			" for="Art. 2.3 - Cárcere Privado">Art. 2.3 - Cárcere Privado**</label>
 		</div>
+		
 		<hr>
-
-
-
 		<h3>
 			<font color="#022d42">CRIMES CONTRA O PATRIMÔNIO:</font>
 		</h3>
@@ -683,20 +680,20 @@
 		<div class="col col-md-12">
 			<input id="Art. 12.1 - Uso Excessivo de Insulfilm" type="checkbox" class="form-check-input" name="crime"
 				value="0|25000|0" onclick="calcular()">
-			<label class="form-check-label" for="Art. 12.1 - Uso Excessivo de Insulfilm">Art. 12.1 - Uso Excessivo de
+			<label class="form-check-label" title="Se você não puder ver a pessoa no do veículo, a tonalidade está muito escura 30%+" for="Art. 12.1 - Uso Excessivo de Insulfilm">Art. 12.1 - Uso Excessivo de
 				Insulfilm</label>
 		</div>
 
 		<div class="col col-md-12">
 			<input id="Art. 12.2 - Veículo Muito Danificado" type="checkbox" class="form-check-input" name="crime"
 				value="0|25000|0" onclick="calcular()">
-			<label class="form-check-label" for="Art. 12.2 - Veículo Muito Danificado">Art. 12.2 - Veículo Muito
+			<label class="form-check-label" title="Veículo fortemente danificado (Reboque obrigatório do veículo, o bilhete pode ser emitido a critério do oficial)" for="Art. 12.2 - Veículo Muito Danificado">Art. 12.2 - Veículo Muito
 				Danificado</label>
 			</div>
 		<div class="col col-md-12">
 			<input id="Art. 12.3 - Veiculo Ilegalmente Estacionado" type="checkbox" class="form-check-input"
 				name="crime" value="0|30000|0" onclick="calcular()">
-			<label class="form-check-label" for="Art. 12.3 - Veiculo Ilegalmente Estacionado">Art. 12.3 - Veiculo
+			<label class="form-check-label" title="Estacionar em um lugar que não seja uma vaga de estacionamento, em uma pista de incêndio, bloqueando uma pista aliada ou a menos de 5 metros de um hidrante, o veículo é abandonado" for="Art. 12.3 - Veiculo Ilegalmente Estacionado">Art. 12.3 - Veiculo
 				Ilegalmente Estacionado</label>
 		</div>
 	</button>
@@ -831,7 +828,7 @@
 	</div>
 	<div class="col col-md-12">
 			<input id="Art 16.7 - Zaralho em Recrutamento Policial" type="checkbox" class="form-check-input" name="crime" value="0|100000|0" onclick="calcular()">
-		<label class="form-check-label" for="Art 16.7 - Zaralho em Recrutamento Policial">Art 16.7 - Zaralho em Recrutamento Policial</label>
+		<label class="form-check-label" title="Realizar brincadeiras, agir de má fé e ter o intuito de apenas ir em um concurso público policial com o intuito de atrapalhar" for="Art 16.7 - Zaralho em Recrutamento Policial">Art 16.7 - Zaralho em Recrutamento Policial</label>
 	</div>
 
 	</div>
@@ -857,16 +854,14 @@
 				size="8" style="margin-right:10px">
 			<input hidden id="fianca-hidden">
 			<br>
-
-			<button class="btn btn-danger" onclick="limpar()"><i class="bi bi-trash"></i> Limpar</button>
-
-			<br>
-
-				<h3>CRIMES (ARTIGOS SELECIONADOS):</h3>
+				<h3 style="margin: 5px;">CRIMES (ARTIGOS SELECIONADOS):</h3>
 				<textarea rows="10" cols="50" style="resize: none;" readonly="true" maxlength="500" id="copy-text"
 					class="TextoArtigos form-control"></textarea>
 
 				<br> <button class="btn btn-success" id="copy"> <i class="bi bi-clipboard"></i> Copiar</button>
+				<br>
+				<br> <button class="btn btn-danger" onclick="limpar()"><i class="bi bi-trash"></i> Limpar</button>
+				<br>
 						
 				<div class="alert alert-success" id="copiado" style="display: none;" role="alert">
 					Copiado com sucesso
@@ -886,10 +881,10 @@
                 <div class="alert alert-success" id="alerta-4" style="display: none;" role="alert">
 					Crime Inafiançavel
 				</div>
-				<h3>
+				<h3 style="margin: 10px;">
 					<font color="#022d42">ATENUANTES:</font>
 				</h3>
-				<h4>
+				<h4 style="margin: 10px;">
 					<font color="#b50000">
 						<input type="checkbox" class="form-check-input" id="advogado-30" name="advogado-30"
 							value="20">🔹 Advogado constituído:
