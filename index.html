@@ -21,9 +21,19 @@
 	</div>
 
 	<div class="fc quadrotopo ">
-		<div style="margin: auto;width: 30%;flex: 0 0 auto;">
-			<h3>RG do Advogado</h3>
-			<input type="number" placeholder="RG DO ADVOGADO" id="adv_rg" name="adv_rg" class="inputnumber form-control" size="8" style="margin-right:10px">
+		<div style="margin: auto;width: 20%;flex: 0 0 auto;">
+			<h3>RG DO ADVOGADO</h3>
+			<input type="number" placeholder="RG DO ADVOGADO" id="adv_rg" name="adv_rg" class="inputnumber form-control" href="RgAdvogado size="8" style="margin-right:10px">
+		</div>
+
+        <div style="margin: 10;width: 40%;flex: 0 0 auto;">
+			<h3>NOME DO CLIENTE</h3>
+			<input type="text" placeholder="NOME DO CLIENTE" id="prs_nm" name="prs_nm" class="inputname form-control" href="NomeCliente" size="8" style="margin-right:10px">
+		</div>
+
+        <div style="margin: auto;width: 20%;flex: 0 0 auto;">
+			<h3>RG DO CLIENTE</h3>
+			<input type="number" placeholder="RG DO CLIENTE" id="prs_rg" name="prs_rg" class="inputnumber form-control" href="RgCliente size="8" style="margin-right:10px">
 		</div>
 		
 	</div>
@@ -850,13 +860,6 @@
 
 			<button class="btn btn-danger" onclick="limpar()"><i class="bi bi-trash"></i> Limpar</button>
 
-
-			<br>
-			<br>
-			<div>
-				<h3>RG DOS AUXILIARES</h3>
-				<input type="text" placeholder="RG DOS AUXILIARES" id="rg_oficiais" name="rg_oficiais" class="form-control" size="8" style="margin-right:10px">
-			</div>
 			<br>
 
 				<h3>CRIMES (ARTIGOS SELECIONADOS):</h3>
@@ -874,11 +877,14 @@
 				<div class="alert alert-success" id="alerta-1" style="display: none;" role="alert">
 					Informe o RG do Advogado
 				</div>
-				<div class="alert alert-success" id="alerta-3" style="display: none;" role="alert">
-					Informe o RG dos Oficiais Participantes
-				</div>
 				<div class="alert alert-success" id="alerta-2" style="display: none;" role="alert">
-					Crime inafiançável
+					Informe o Nome do Cliente
+				</div>
+				<div class="alert alert-success" id="alerta-3" style="display: none;" role="alert">
+					Informe o RG do Cliente
+				</div>
+                <div class="alert alert-success" id="alerta-4" style="display: none;" role="alert">
+					Crime Inafiançavel
 				</div>
 				<h3>
 					<font color="#022d42">ATENUANTES:</font>
@@ -1337,7 +1343,7 @@
 					
 					calcular();
 				} else {
-					$("#alerta-2")[0].style.display = 'block';
+					$("#alerta-4")[0].style.display = 'block';
 					const timeOut = setTimeout(inafiancavel, 3000);
 					$("#fiancaP")[0].checked = false;
 					calcular();
@@ -1439,6 +1445,8 @@
 			atenuante = "";
 			$('#preso_rg').val("")
 			$("#multa").val("")
+            $("#prs_nm").val("")
+            $("#prs_rg").val("")
 			$("#adv_rg").val("")
 			$("#rg_oficiais").val("")
 			$("#pena-reducao").val(0);
@@ -1494,21 +1502,23 @@
 				porte = "Não"
 			}
 			if(atenuante != ""){
-				text.innerHTML = "```yaml"
-				+"\n"
-				+$(".TextoArtigos").val()
-				+"\nATENUANTES:\n" + atenuante
-				+"\n\n📋 PORTE DE ARMA: " + porte 
-				+"\nFIANÇA: " + fianca 
-				+"\n\n👮‍♂️ RG DOS OFICIAIS: " + $("#rg_oficiais").val() 
-				+"\nADVOGADO:" + $("#adv_rg").val() + "(RG)"
+				text.innerHTML = "```md"
+                +"\n# INFORMAÇÕES DO PRESO"
+                +"\n* Nome: " + $("#prs_nm").val()
+                +"\n* RG: " + $("#prs_rg").val()
+                +"\n"
+                +"\n# CRIMES:\n"
+                +"\n"
+                + $(".TextoArtigos").val()
+				+"\n# ATENUANTES:\n" + atenuante
+                +"\n"
+				+"\n# FIANÇA: " + fianca 
+				+"\n# ADVOGADO: " + $("#adv_rg").val() + "(RG)"
 				+"\n```"
 			} else {
-				text.innerHTML ="```yaml"
+				text.innerHTML ="```md"
 				+"\n"
 				+$(".TextoArtigos").val()
-				+"\n👮‍♂️ RG DOS OFICIAIS: " + $("#rg_oficiais").val()
-				+"\n📋 PORTE DE ARMA: " + porte
 				+"\n```"
 			}
 				const blobt = new Blob([text.innerHTML], {type: 'text/plain'})
@@ -1533,11 +1543,14 @@
 		function advConst(){
 		$("#alerta-1")[0].style.display = 'none';
 		}
-		function rgOficiais(){
-		$("#alerta-3")[0].style.display = 'none';
-		}
-		function inafiancavel(){
+		function NomePreso(){
 		$("#alerta-2")[0].style.display = 'none';
+		}
+        function RgPreso(){
+        $("#alerta-3")[0].style.display = 'none';
+        }
+		function inafiancavel(){
+		$("#alerta-4")[0].style.display = 'none';
 		}
 		function tirarBloco() {
 			$("#copiado")[0].style.display = 'none';
