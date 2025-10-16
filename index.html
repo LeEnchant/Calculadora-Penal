@@ -1,1546 +1,555 @@
-<html>
-<link type="text/css" rel="stylesheet" id="dark-mode-custom-link">
-<link type="text/css" rel="stylesheet" id="dark-mode-general-link">
-<style lang="en" type="text/css" id="dark-mode-custom-style"></style>
-<style lang="en" type="text/css" id="dark-mode-native-style"></style>
-
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-	<link rel="stylesheet" href="style.css">
-	<link rel="shortcut icon" href="faviconoab.ico" type="image/x-icon">
-
-
-
-	<title>Calculadora Penal OAB</title>
-	<div class="fc" style="text-align: center;" >
-		<img src="logooab.png" height="150px" width="auto">
-
-	</div>
-
-	<div class="fc quadrotopo ">
-		<div style="margin: auto;width: 20%;flex: 0 0 auto;">
-			<h3>RG DO ADVOGADO</h3>
-			<input type="number" placeholder="RG DO ADVOGADO" id="adv_rg" name="adv_rg" class="inputnumber form-control" href="RgAdvogado size="8" style="margin-right:10px">
-		</div>
-
-        <div style="margin: 10;width: 40%;flex: 0 0 auto;">
-			<h3>NOME DO CLIENTE</h3>
-			<input type="text" placeholder="NOME DO CLIENTE" id="prs_nm" name="prs_nm" class="inputname form-control" href="NomeCliente" size="8" style="margin-right:10px">
-		</div>
-
-        <div style="margin: auto;width: 20%;flex: 0 0 auto;">
-			<h3>RG DO CLIENTE</h3>
-			<input type="number" placeholder="RG DO CLIENTE" id="prs_rg" name="prs_rg" class="inputnumber form-control" href="RgCliente size="8" style="margin-right:10px">
-		</div>
-		
-	</div>
-
-
-<body class="fc">
-
-	<div id="1" class="fc quadro" style=" padding: 10px;">
-		<h3>
-			<font color="#022d42">CRIMES 0.0:</font>
-		</h3>
-		<div class="col col-md-12">
-			<input id="Art. 0.1 - Azaralhamento" type="checkbox" class="form-check-input" name="crime"
-				value="100|100000|130000" onclick="calcular()">
-			<label class="form-check-label" title="Quando alguém está bagunçando no recrutamento.
-				" for="Art. 0.1 - Azaralhamento">Art. 0.1 - Azaralhamento</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 0.2 - Prisão Militar" type="checkbox" class="form-check-input" name="crime"
-				value="100|-|NA" onclick="calcular()">
-			<label class="form-check-label" title="Quando um oficial da lei deixa de cumprir uma ordem direta ou age fora das condutas e éticas e morais de sua função.
-				" for="Art. 0.2 - Prisão Militar">Art. 0.2 - Prisão Militar**</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 0.3 - Prevaricação" type="checkbox" class="form-check-input" name="crime"
-				value="100|100000|NA" onclick="calcular()">
-			<label class="form-check-label" title="É um dos crimes praticados por funcionário público contra a administração em geral que consiste em retardar ou deixar de praticar, indevidamente, ato de ofício, ou praticá-lo contra disposição expressa de lei, para satisfazer interesse ou sentimento pessoal.
-					" for="Art. 0.3 - Prevaricação">Art. 0.3 - Prevaricação**</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 0.4 - Invasão de departamento policial" type="checkbox" class="form-check-input" name="crime"
-				value="100|100000|200000" onclick="calcular()">
-			<label class="form-check-label" title="É o ato de invadir uma área policial ou departamento sem autorização de algum oficial em serviço."
-			 for="Art. 0.4 - Invasão de departamento policial">Art. 0.4 - Invasão de departamento policial**</label>
-		</div>
-		<h3>
-			<font color="#022d42">CRIMES CONTRA A VIDA:</font>
-		</h3>
-		<div class="col col-md-12">
-			<input id="Art. 1.1 - Homicídio Doloso Qualificado " type="checkbox" class="form-check-input" name="crime"
-				value="40|150000|NA" onclick="calcular()">
-			<label class="form-check-label" title="Quando uma pessoa toma qualquer ação premeditada para causar intencionalmente a morte de outra pessoa. 
-			" for="Art. 1.1 - Homicídio ">Art. 1.1 - Homicídio Doloso
-				Qualificado **</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 1.2 - Homicídio Doloso" type="checkbox" class="form-check-input" name="crime"
-				value="40|150000|NA" onclick="calcular()">
-			<label class="form-check-label" title="Quando uma pessoa toma qualquer ação premeditada para causar intencionalmente a morte de outra pessoa. 
-			" for="Art. 1.2 - Homicídio Doloso">Art. 1.2 - Homicídio Doloso**
-		</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 1.3 - Tentativa de Homicídio" type="checkbox" class="form-check-input" name="crime"
-				value="30|100000|NA" onclick="calcular()">
-			<label class="form-check-label" title="Quando uma pessoa toma alguma ação, ou deliberada e maliciosamente, com a intenção de causar a morte de outra pessoa e não tem sucesso. 
-			" for="Art. 1.3 - Tentativa de Homicídio">Art. 1.3 - Tentativa de Homicídio**
-		</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 1.4 - Homicídio Culposo" type="checkbox" class="form-check-input" name="crime"
-				value="40|150000|NA" onclick="calcular()">
-			<label class="form-check-label" title="É aquele em que tipicamente se fala que a morte ocorreu por causa da ação do acusado, mas que não houve a intenção de matar. 
-			" for="Art. 1.4 - Homicídio Culposo">Art. 1.4 - Homicídio Culposo**
-		</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 1.5 - Homicídio Culposo no Trânsito" type="checkbox" class="form-check-input" name="crime"
-				value="30|150000|250000" onclick="calcular()">
-			<label class="form-check-label" title="É aquele em que tipicamente se fala que a morte ocorreu por causa da ação do acusado, mas que não houve a intenção de matar. 
-			" for="Art. 1.5 - Homicídio Culposo no Trânsito">Art. 1.5 - Homicídio Culposo no Trânsito
-		</label>
-		</div>
-		<!--
-			<div class="col col-md-12">
-	<input id="Art. 1.2 - Homicídio Doloso" type="checkbox" class="form-check-input" name="crime" value="30|75000|NA" onclick="calcular()">
-	<label class="form-check-label" for="Art. 1.2 - Homicídio Doloso">Art. 1.2 - Homicídio Doloso**</label>
-			</div>
-		<div class="col col-md-12">
-	<input id="Art. 1.3 - Tentativa de Homicídio" type="checkbox" class="form-check-input" name="crime" value="25|65000|NA" onclick="calcular()">
-	<label class="form-check-label" for="Art. 1.3 - Tentativa de Homicídio">Art. 1.3 - Tentativa de Homicídio**</label>
-			</div>
-			<div class="col col-md-12">NA
-	
-	<input id="Art. 1.4 - Homicídio Culposo" type="checkbox" class="form-check-input" name="crime" value="20|50000|75000" onclick="calcular()">
-	<label class="form-check-label" for="Art. 1.4 - Homicídio Culposo">Art. 1.4 - Homicídio Culposo </label>
-			</div>
-			
-	<hr>
-		-->
-
-
-		<h3>
-			<font color="#022d42">DOS CRIMES VIOLENTOS:</font>
-		</h3>
-		<div class="col col-md-12">
-			<input id="Art. 2.1 - Lesão Corporal" type="checkbox" class="form-check-input" name="crime"
-				value="40|50000|65000" onclick="calcular()">
-			<label class="form-check-label" title="Causar danos significativos a outra pessoa através do toque intencional ofensivo ou prejudicial a essa pessoa sem o seu consentimento. Nota: A Lesão Corporal só se aplica se o indivíduo estiver incapacitado (derrubado). 
-			" for="Art. 2.1 - Lesão Corporal"> Art. 2.1 - Lesão Corporal</label>
-		</div>
-		<!-- 
-		<div class="col col-md-12">
-	<input id="Art. 2.2 - Incêndio" type="checkbox" class="form-check-input" name="crime" value="10|30000|50000" onclick="calcular()">
-	<label class="form-check-label" for="Art. 2.2 - Incêndio">Art. 2.2 - Incêndio </label>
-			</div> -->
-		<div class="col col-md-12">
-			<input id="Art. 2.2 - Sequestro" type="checkbox" class="form-check-input" name="crime" value="50|200000|NA"
-				onclick="calcular()">
-			<label class="form-check-label" title="Apreender e levar ilegalmente uma pessoa pela força ou fraude, ou apreender e deter uma pessoa contra a sua vontade com a intenção de levar essa pessoa embora mais tarde. No caso em que vários reféns são tomados de uma só vez, apenas uma cobrança será apresentada. 
-			" for="Art. 2.2 - Sequestro">Art. 2.2 - Sequestro**</label>
-		</div>
-		<div class="col col-md-12">
-	<input id="Art. 2.3 - Cárcere Privado" type="checkbox" class="form-check-input" name="crime" value="50|200000|NA" onclick="calcular()">
-	<label class="form-check-label" title="Deter, ou prender alguém indevidamente e contra sua vontade. No crime do Cárcere Privado, a vítima quase não tem como se locomover, sua liberdade fica restrita a um pequeno espaço físico, como um quarto ou banheiro. 
-			" for="Art. 2.3 - Cárcere Privado">Art. 2.3 - Cárcere Privado**</label>
-		</div>
-		
-		<hr>
-		<h3>
-			<font color="#022d42">CRIMES CONTRA O PATRIMÔNIO:</font>
-		</h3>
-		<!-- <div class="col col-md-12">
-			<input id="Art. 3.1 - Desmanche de Veículos" type="checkbox" class="form-check-input" name="crime" value="30|25000|50000" onclick="calcular()">
-	<label class="form-check-label" for="Art. 3.1 - Desmanche de Veículos">Art. 3.1 - Desmanche de Veículos</label>
-		</div> -->
-		<div class="col col-md-12">
-			<input id="Art. 3.1 - Furto" type="checkbox" class="form-check-input" name="crime" value="35|50000|65000"
-				onclick="calcular()">
-			<label class="form-check-label" title="Subtrair, para si ou para outrem, coisa alheia móvel, mas por circunstâncias não previstas pelo agente, não se consuma o pretendido. 
-			" for="Art. 3.1 - Furto">Art. 3.1 - Furto </label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 3.2 - Receptação de Veículos" type="checkbox" class="form-check-input" name="crime"
-				value="35|50000|65000" onclick="calcular()">
-			<label class="form-check-label" title="Posse de qualquer veículo roubado consigo.
-			" for="Art. 3.2 - Receptação de Veículos">Art. 3.2 - Receptação de Veículos
-			</label>
-		</div>
-		<!-- <div class="col col-md-12">
-			<input id="Art. 3.4 - Roubo de Veículos" type="checkbox" class="form-check-input" name="crime" value="15|50000|70000" onclick="calcular()">
-	<label class="form-check-label" for="Art. 3.4 - Roubo de Veículos">Art. 3.4 - Roubo de Veículos</label>
-	</div> -->
-		<div class="col col-md-12">
-			<input id="Art. 3.3 - Tentativa de Furto" type="checkbox" class="form-check-input" name="crime" value="10|30000|50000" onclick="calcular()">
-		<label class="form-check-label" title="Tenta subtrair, para si ou para outrem, coisa alheia móvel, mas por circunstâncias não previstas pelo agente, não se consuma o pretendido." for="Art. 3.3 - Tentativa de Furto">Art. 3.3 - Tentativa de Furto</label>
-		</div>
-		<div class="col col-md-12">
-				<input id="Art. 3.4 - Furto de Veículos" type="checkbox" class="form-check-input" name="crime" value="15|40000|55000" onclick="calcular()">
-		<label class="form-check-label" title="Subtrair, para si ou para outrem veiculos." for="Art. 3.4 - Furto de Veículos">Art. 3.4 - Furto de Veículos</label>
-		</div> 
-		<div class="col col-md-12">
-			<input id="Art. 3.5 - Invasão de Propriedade" type="checkbox" class="form-check-input" name="crime" value="15|40000|55000" onclick="calcular()">
-	<label class="form-check-label" title="Entrar ou permanecer na sua casa contra sua vontade." for="Art. 3.5 - Invasão de Propriedade">Art. 3.5 - Invasão de Propriedade</label>
-	</div> 
-	<div class="col col-md-12">
-		<input id="Art. 3.6 - Apropriação indébita " type="checkbox" class="form-check-input" name="crime" value="30|40000|55000" onclick="calcular()">
-<label class="form-check-label" title="É um crime doloso, praticado contra o patrimônio, e que consiste em apropriar-se de uma coisa alheia móvel, cuja posse ou detenção desvigiada lhe foi conferida de forma lícita. " for="Art. 3.6 - Apropriação indébita ">Art. 3.6 - Apropriação indébita </label>
-</div> 
-		<hr>
-
-
-
-		<h3>
-			<font color="#022d42">DOS ROUBOS E DA EXTORSÃO:</font>
-		</h3>
-		<div class="col col-md-12">
-			<input id="Art. 4.1 - Roubo" type="checkbox" class="form-check-input" name="crime" value="40|100000|130000"
-				onclick="calcular()">
-			<label class="form-check-label" title="Subtrair coisa móvel alheia, para si ou para outrem, mediante grave ameaça ou violência a pessoa, ou depois de havê-la, por qualquer meio, reduzido à impossibilidade de resistência 
-			" for="Art. 4.1 - Roubo">Art. 4.1 - Roubo</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 4.2 - Furto a Caixa Eletrônico" type="checkbox" class="form-check-input" name="crime"
-				value="35|50000|65000" onclick="calcular()">
-			<label class="form-check-label" title="Furtar um caixa eletrônico / Registradora
-			" for="Art. 4.2 - Furto a Caixa Eletrônico">Art. 4.2 - Furto a Caixa
-				Eletrônico </label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 4.3 - Extorsão" type="checkbox" class="form-check-input" name="crime" value="40|50000|65000"
-				onclick="calcular()">
-			<label class="form-check-label" title="Constranger alguém, mediante violência ou grave ameaça, e com o intuito de obter para si ou para outrem indevida vantagem econômica, a fazer, tolerar que se faça ou deixar de fazer alguma coisa
-			" for="Art. 4.3 - Extorsão">Art. 4.3 - Extorsão</label>
-		</div>
-		<hr>
-
-
-		<h3>
-			<font color="#022d42">CRIMES DE PORTE, POSSE E EQUIPAMENTOS ILEGAIS:</font>
-		</h3>
-		<div class="col col-md-12">
-			<input id="Art. 5.1 - Posse de Peças de Armas" type="checkbox" class="form-check-input" name="crime"
-				value="35|50000|65000" onclick="calcular()">
-			<label class="form-check-label" title="Posse de componentes de fabricação de armas
-			" for="Art. 5.1 - Posse de Peças de Armas">Art. 5.1 - Posse de Peças de Armas
-			</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 5.2 - Posse de Cápsulas" type="checkbox" class="form-check-input" name="crime"
-				value="35|50000|65000" onclick="calcular()">
-			<label class="form-check-label" title="Posse de componentes de fabricação de munição
-			" for="Art. 5.2 - Posse de Cápsulas">Art. 5.2 - Posse de Cápsulas </label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 5.3 - Tráfico de Armas" type="checkbox" class="form-check-input" name="crime"
-				value="60|300000|400000" onclick="calcular()">
-			<label class="form-check-label" title="(3 ou + Armamentos).
-" for="Art. 5.3 - Tráfico de Armas">Art. 5.3 - Tráfico de Armas </label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 5.4 - Porte de Arma Pesada" type="checkbox" class="form-check-input" name="crime"
-				value="45|200000|250000" onclick="calcular()">
-			<label class="form-check-label" title="Porte de Thompson, MTAR, AK-47, Parafall, M4A4, MP5, SIG-SAUER, UZI (cada)
-			" for="Art. 5.4 - Porte de Arma Pesada">Art. 5.4 - Porte de Arma Pesada
-			</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 5.5 - Porte de Arma Leve" type="checkbox" class="form-check-input" name="crime"
-				value="35|100000|150000" onclick="calcular()">
-			<label class="form-check-label" title="Porte de FIVE-SEVEN, .50, GLOCK (cada)
-			" for="Art. 5.5 - Porte de Arma Leve">Art. 5.5 - Porte de Arma Leve </label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 5.6 - Posse de Munição (-100)" type="checkbox" class="form-check-input" name="crime"
-				value="40|50000|65000" onclick="calcular()">
-			<label class="form-check-label" title="Posse de municiamento inferior a 100 unidades.
-			" for="Art. 5.6 - Posse de Munição (-100)">Art. 5.6 - Posse de Munição (-100)
-			</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 5.7 - Posse de Arma Branca" type="checkbox" class="form-check-input" name="crime"
-				value="1|30000|0" onclick="calcular()">
-			<label class="form-check-label" title="Posse de qualquer ferramenta de que possa ser utilizada como arma corpo-a-corpo de maneira imprudente.
-			" for="Art. 5.7 - Posse de Arma Branca">Art. 5.7 - Posse de Arma Branca
-			</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 5.8 - Tráfico de munição (+100)" type="checkbox" class="form-check-input" name="crime"
-				value="60|100000|200000" onclick="calcular()">
-			<label class="form-check-label" title="Se enquadra como tráfico de munições portar 100 ou mais munições independente do tipo.
-			" for="Art. 5.8 - Tráfico de munição (+100)">Art. 5.8 - Tráfico de Munições (+100)
-			</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 5.9 - Condução de Itens Ilegais" type="checkbox" class="form-check-input" name="crime"
-				value="50|100000|200000" onclick="calcular()">
-			<label class="form-check-label" title="Se enquadra como condução de itens ilegais o ato em flagrante de transportar no porta malas independente do tipo de veículo ou proprietário. (armas, peças de armas, cápsula, munição, arma branca, drogas, narcotráfico, equipamento restrito e etc...).
-			" for="Art. 5.9 - Condução de Itens Ilegais">Art. 5.9 - Condução de Itens Ilegais
-			</label>
-		</div>
-				<div class="col col-md-12">
-			<input id="Art. 5.10 - Tráfico de equipamento balistico" type="checkbox" class="form-check-input" name="crime"
-				value="50|100000|200000" onclick="calcular()">
-			<label class="form-check-label" title="Se enquadra como tráfego de equipamento balístico portar 5 ou mais coletes.
-			" for="Art. 5.10 - Tráfico de equipamento balistico">Art. 5.10 - Tráfico de equipamento balistico
-			</label>
-		</div>
-		<!-- <div class="col col-md-12">
-	<input id="Art. 5.6 - Disparo de Arma de Fogo" type="checkbox" class="form-check-input" name="crime" value="40|10000|20000" onclick="calcular()">
-	<label class="form-check-label" for="Art. 5.6 - Disparo de Arma de Fogo">Art. 5.6 - Disparo de Arma de Fogo </label>
-	</div>
-		<div class="col col-md-12">
-	<input id="Art. 5.7 - Tráfico de Munições (+100)" type="checkbox" class="form-check-input" name="crime" value="20|25000|40000" onclick="calcular()">
-	<label class="form-check-label" for="Art. 5.7 - Tráfico de Munições (+100)">Art. 5.7 - Tráfico de Munições (+100) </label>
-	</div>
-		
-		<div class="col col-md-12">
-	<input id="Art. 5.9 - Posse de Colete" type="checkbox" class="form-check-input" name="crime" value="20|10000|30000" onclick="calcular()">
-	<label class="form-check-label" for="Art. 5.9 - Posse de Colete">Art. 5.9 - Posse de Colete </label>
-	</div> -->
-	<h3>
-		<font color="#022d42">NARCOTRÁFICO:</font>
-	</h3>
-
-
-	<div class="col col-md-12">
-		<input id="Art. 6.1 - Aviãozinho (6 a 100)" type="checkbox" class="form-check-input" name="crime"
-			value="35|70000|91000" onclick="calcular()">
-		<label class="form-check-label" title=" Posse de carregamento de drogas no intuito de "delivery" a outros civis. (Entrega de drogas )
-		" for="Art. 6.1 - Aviãozinho (6 a 100)">Art. 6.1 - Aviãozinho (6 a 100)
-		</label>
-	</div>
-
-	<div class="col col-md-12">
-		<input id="Art. 6.2 - Posse de Componentes Narcóticos" type="checkbox" class="form-check-input" name="crime"
-			value="35|50000|65000" onclick="calcular()">
-		<label class="form-check-label" title="Posse de matéria-prima usada para fabricação de narcóticos
-		" for="Art. 6.2 - Posse de Componentes Narcóticos">Art. 6.2 - Posse de
-			Componentes Narcóticos </label>
-	</div>
-
-	<div class="col col-md-12">
-		<input id="Art. 6.3 - Posse de Drogas (1 a 5)" type="checkbox" class="form-check-input" name="crime"
-			value="1|30000|0" onclick="calcular()">
-		<label class="form-check-label" title="Abaixo de 6, apenas apreender
-		" for="Art. 6.3 - Posse de Drogas (1 a 5)">Art. 6.3 - Posse de Drogas (1 a
-			5)</label>
-	</div>
-
-	<div class="col col-md-12">
-		<input id="Art. 6.4 - Tráfico de Drogas (+100)" type="checkbox" class="form-check-input" name="crime"
-			value="60|100000|200000" onclick="calcular()">
-		<label class="form-check-label" title="100 ou mais considera-se tráfico
-		" for="Art. 6.4 - Tráfico de Drogas (+100)">Art. 6.4 - Tráfico de Drogas
-			(+100) </label>
-	</div>
-
-	<div class="col col-md-12">
-		<input id="Art. 6.5 - Associação ao tráfico" type="checkbox" class="form-check-input" name="crime"
-			value="35|50000|60000" onclick="calcular()">
-		<label class="form-check-label" title="Associarem-se duas ou mais pessoas para o fim de praticar, reiteradamente ou não, qualquer dos crimes previstos nos arts. 6.1. e 6.4. do Código Penal. Diferencia-se do crime de Associação Criminosa, pois deverá ser aplicado em todo caso em que dois ou mais cidadãos forem pegos portanto ao menos 06 (seis) entorpecentes.
-		" for="Art. 6.5 - Associação ao tráfico">Art. 6.5 - Associação ao tráfico
-			</label>
-	</div>
-		
-		
-	</div>
-
-
-	<div id="2" class="fc quadro" style="padding: 10px;">
-		<h3>
-			<font color="#022d42">DINHEIRO SUJO OU MARCADO:</font>
-		</h3>
-
-		<div class="col col-md-12">
-			<input id="Art. 7.1 - Dinheiro Sujo" type="checkbox" class="form-check-input" name="crime"
-				value="30|500|500" onclick="calcular()">
-			<label class="form-check-label" for="Art. 7.1 - Dinheiro Sujo">Art. 7.1 - Dinheiro Sujo</label>
-
-			<font color="#275c3d">
-				<input type="number" id="sujo" placeholder="R$ Dinheiro sujo" name="sujo" class="form-control"
-					onchange="calcular()" size="9">
-		</div>
-		<hr>
-		<h3>
-			<font color="#022d42">CRIMES CONTRA A HONRA:</font>
-		</h3>
-		<div class="col col-md-12">
-			<input id="Art. 8.1 - Falsidade Ideológica" type="checkbox" class="form-check-input" name="crime"
-				value="30|125000|162500" onclick="calcular()">
-			<label class="form-check-label" title="Se passar por um advogado certificado ou funcionário do governo (incluindo policiais, membros do Departamento de Justiça, etc.) 
-			" for="Art. 8.1 - Falsidade Ideológica">Art. 8.1 - Falsidade
-				Ideológica</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 8.2 - Perjúrio" type="checkbox" class="form-check-input" name="crime" value="10|10000|13000"
-				onclick="calcular()">
-			<label
-				title="Crime de falso testemunho ou de falsa acusação; testemunho em que se afirma, em prejuízo de outrem ou da justiça, algo que a testemunha sabe ser falso."
-				class="form-check-label" for="Art. 8.2 - Perjúrio">Art. 8.2 - Perjúrio</label>
-
-
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 8.3 - Formação de Quadrilha" type="checkbox" class="form-check-input" name="crime"
-				value="50|150000|175000" onclick="calcular()">
-			<label class="form-check-label" title="Consiste na associação de quatro ou mais pessoas que se dedicam a cometer um ou mais delitos.
-			" for="Art. 8.3 - Formação de Quadrilha">Art. 8.3 - Formação de
-				Quadrilha</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 8.4 - Associação Criminosa" type="checkbox" class="form-check-input" name="crime"
-				value="30|65000|100000" onclick="calcular()">
-			<label class="form-check-label" title="Consiste na associação de duas ou mais pessoas que se dedicam a cometer um ou mais delitos.
-			" for="Art. 8.4 - Assosiação Criminosa">Art. 8.4 - Assosiação Criminosa</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 8.5 - Difamação" type="checkbox" class="form-check-input" name="crime"
-				value="15|30000|50000" onclick="calcular()">
-			<label class="form-check-label" title="É a imputação ofensiva atribuída contra a honorabilidade de alguém com a intenção de desacreditá-lo na sociedade em que vive, e provocar contra ele desprezo ou menosprezo público." for="Art. 8.5 - Difamação">Art. 8.5 - Difamação
-		</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 8.6 - Injúria" type="checkbox" class="form-check-input" name="crime"
-				value="15|30000|50000" onclick="calcular()">
-			<label class="form-check-label" title="Entende-se ofensa que venha atingir a pessoa, em desrespeito a seu decoro, a sua honra, a seus bens ou a sua vida." for="Art. 8.6 - Injúria">Art. 8.6 - Injúria
-		</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 8.7 - Calúnia" type="checkbox" class="form-check-input" name="crime"
-				value="15|30000|50000" onclick="calcular()">
-			<label class="form-check-label" title="É dizer de forma mentirosa que alguém cometeu crime" for="Art. 8.7 - Calúnia">Art. 8.7 - Calúnia
-			</label>
-		</div>
-
-		<hr>
-		<h3>
-			<font color="#022d42">INFRAÇÕES PENAIS/ CRIMES MENORES:</font>
-		</h3>
-
-		<div class="col col-md-12">
-			<input id="Art. 10.0 - Posse de Arma em Público" type="checkbox" class="form-check-input" name="crime"
-				value="10|250000|50000" onclick="calcular()">
-			<label class="form-check-label" title="Intencionalmente ou conscientemente colocando outra pessoa com medo de lesões corporais.
-			" for="Art. 10.0 - Posse de Arma em Público">Art. 10.0 - Posse de Arma em Público</label>
-		</div>
-		<!--
-
-<div class="col col-md-12">
-		<input id="Art. 6.7 - Falsa Comunicação de Crime" type="checkbox" class="form-check-input" name="crime" value="10|15000|30000" onclick="calcular()">
-		<label class="form-check-label" for="Art. 6.7 - Falsa Comunicação de Crime">Art. 6.7 - Falsa Comunicação de Crime</label>
-	</div> -->
-		<div class="col col-md-12">
-			<input id="Art. 10.1 - Ameaça" type="checkbox" class="form-check-input" name="crime"
-				value="50|100000|130000" onclick="calcular()">
-			<label class="form-check-label" title="Intencionalmente ou conscientemente colocando outra pessoa com medo de lesões corporais.
-			" for="Art. 10.1 - Ameaça">Art. 10.1 - Ameaça</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 10.2 - Uso Indevido do 190/192 reincidente" type="checkbox" class="form-check-input" name="crime"
-				value="20|50000|65000" onclick="calcular()">
-			<label class="form-check-label" title="Se alguém for um infrator reincidente, ele pode ser enviado para a cadeia, use seu melhor julgamento.
-			" for="Art. 10.2 - Uso Indevido do 190/192">Art. 10.2 - Uso Indevido do
-				190/192</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 10.3 - Desobêdiencia 1" type="checkbox" class="form-check-input" name="crime"
-				value="50|50000|65000" onclick="calcular()">
-			<label class="form-check-label" title="Nenhuma pessoa poderá deixar de cumprir qualquer ordem legal ou direção de qualquer policial.
-			" for="Art. 10.3 - Desobêdiencia 1">Art. 10.3 - Desobêdiencia 1 </label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 10.3 - Desobêdiencia 2" type="checkbox" class="form-check-input" name="crime"
-				value="50|50000|65000" onclick="calcular()">
-			<label class="form-check-label" title="Nenhuma pessoa poderá deixar de cumprir qualquer ordem legal ou direção de qualquer policial.
-			" for="Art. 10.3 - Desobêdiencia 2">Art. 10.3 - Desobêdiencia 2 </label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 10.3 - Desobêdiencia 3" type="checkbox" class="form-check-input" name="crime"
-				value="50|50000|65000" onclick="calcular()">
-			<label class="form-check-label" title="Nenhuma pessoa poderá deixar de cumprir qualquer ordem legal ou direção de qualquer policial.
-			" for="Art. 10.3 - Desobêdiencia 3">Art. 10.3 - Desobêdiencia 3 </label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 10.3 - Desobêdiencia 4" type="checkbox" class="form-check-input" name="crime"
-				value="50|50000|65000" onclick="calcular()">
-			<label class="form-check-label" title="Nenhuma pessoa poderá deixar de cumprir qualquer ordem legal ou direção de qualquer policial.
-			" for="Art. 10.3 - Desobêdiencia 4">Art. 10.3 - Desobêdiencia 4 </label>
-		</div>
-
-		<div class="col col-md-12">
-			<input id="Art. 10.4 - Posse de Itens Ilegais" type="checkbox" class="form-check-input" name="crime"
-				value="35|50000|65000" onclick="calcular()">
-			<label class="form-check-label" title="Posse de qualquer ferramenta usada para algum crime. Lockpick, capuz, algema e etc. 
-			" for="Art. 10.4 - Posse de Itens Ilegais">Art. 10.4 - Posse de Itens Ilegais</label>
-			
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 10.5 - Assédio" type="checkbox" class="form-check-input" name="crime"
-				value="60|150000|200000" onclick="calcular()">
-			<label class="form-check-label" title="O assédio pode ser configurado como condutas abusivas exaradas por meio de palavras, comportamentos, atos, gestos, escritos que podem trazer danos à personalidade, à dignidade ou à integridade física ou psíquica de uma pessoa, pôr em perigo o seu emprego ou degradar o ambiente de trabalho. 
-			" for="Art. 10.5 - Assédio">Art. 10.5 - Assédio</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 10.6 - Atentado ao Pudor" type="checkbox" class="form-check-input" name="crime"
-				value="50|50000|65000" onclick="calcular()">
-			<label class="form-check-label" title="Expondo intencionalmente as partes íntimas ou privadas do corpo em um lugar público.
-			" for="Art. 10.6 - Atentado ao Pudor">Art. 10.6 - Atentado ao Pudor</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 10.7 - Suborno" type="checkbox" class="form-check-input" name="crime"
-				value="25|50000|100000" onclick="calcular()">
-			<label class="form-check-label" title="Suborno ato ou efeito de subornar; compra, dinheiro ou valor que se suborna ou se tenta subornar.
-			" for="Art. 10.7 - Suborno">Art. 10.7 - Suborno</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 10.8 - Vandalismo" type="checkbox" class="form-check-input" name="crime"
-				value="20|50000|65000" onclick="calcular()">
-			<label class="form-check-label" title="Destruir, inutilizar ou deteriorar coisa alheia
-			" for="Art. 10.8 - Vandalismo">Art. 10.8 - Vandalismo</label>
-		</div>
-		
-	<div class="col col-md-12">
-		<input id="Art. 10.8.1 - Danos ao patrimônio público" type="checkbox" class="form-check-input" name="crime" value="25|100000|130000" onclick="calcular()">
-		<label class="form-check-label" title="Causar danos ao patrimônio público
-		" for="Art. 10.8.1 - Danos ao patrimônio público ">Art. 10.8.1 - Danos ao patrimônio público</label>
-	</div>
-	<!--
-	<div class="col col-md-12">
-		<input id="Art. 6.15 - Invasão de Propriedade" type="checkbox" class="form-check-input" name="crime" value="15|20000|50000" onclick="calcular()">
-		<label class="form-check-label" for="Art. 6.15 - Invasão de Propriedade">Art. 6.15 - Invasão de Propriedade</label>
-	</div> -->
-		<div class="col col-md-12">
-			<input id="Art. 10.9 - Abuso de Autoridade" type="checkbox" class="form-check-input" name="crime"
-				value="25|50000|65000" onclick="calcular()">
-			<label class="form-check-label" title="Quando o Agente usa das suas atribuições do cargo para constranger, ameaçar, agredir ou qualquer outro ato que atinja um cidadão. ( DEVERA NESSE CASO SER ANALISADO PELA HIERARQUIA SUPERIOR DA POLICIA )
-			" for="Art. 10.9 - Abuso de Autoridade">Art. 10.9 - Abuso de
-				Autoridade</label>
-		</div>
-		<div class="col col-md-12">
-
-			<input id="Art. 10.10 - Uso de Máscara" type="checkbox" class="form-check-input" name="crime"
-				value="10|50000|65000" onclick="calcular()">
-			<label class="form-check-label" title="Usar mascara ou qualquer outra coisa que impeça o Agente de identificar um cidadão.
-			" for="Art. 10.10 - Uso de Máscara">Art. 10.10 - Uso de Máscara</label>
-		</div>
-		<div class="col col-md-12">
-
-			<input id="Art. 10.11 - Uso de Equipamentos Restritos" type="checkbox" class="form-check-input" name="crime"
-				value="10|50000|65000" onclick="calcular()">
-			<label class="form-check-label" title="Uso de equipamentos balísticos: coldres, coletes/capacetes militares etc..
-			" for="Art. 10.11 - Uso de Equipamentos Restritos">Art. 10.11 - Uso de
-				Equipamentos Restritos</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 10.12 - Apologia ao Crime" type="checkbox" class="form-check-input" name="crime"
-				value="45|100000|130000" onclick="calcular()">
-			<label class="form-check-label" title="O crime já foi praticado, exaltando o crime ou seu autor.
-			" for="Art. 10.12 - Apologia ao Crime">Art. 10.12 - Apologia ao Crime</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 10.13 - Incitação ao Crime" type="checkbox" class="form-check-input" name="crime"
-				value="10|50000|65000" onclick="calcular()">
-			<label class="form-check-label" title="Incentivar ou induzir outra pessoa a cometer um crime que ainda não tenha ocorrido. Se o crime já foi cometido, torna-se Associação Criminosa. A prisão deve ser considerada com base na extensão do(s) crime(s) solicitado(s).
-			" for="Art. 10.13 - Incitação ao Crime">Art. 10.13 - Incitação ao Crime</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 10.14 - Falsa comunição de Crime" type="checkbox" class="form-check-input" name="crime"
-				value="25|50000|65000" onclick="calcular()">
-			<label class="form-check-label" title="Intencionalmente fazendo uma declaração falsa para um funcionário da lei em serviço ou 190 mensagem de envio.
-			" for="Art. 10.14 - Falsa comunição de Crime">Art. 10.14 - Falsa comunição de Crime</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 10.15 - Vadiagem" type="checkbox" class="form-check-input" name="crime"
-				value="10|5000|10000" onclick="calcular()">
-			<label class="form-check-label" title="Permanecendo em qualquer lugar público sem um propósito aparente, enquanto recebe uma ordem legal para dispersar por um oficial da lei.
-			" for="Art. 10.15 - Vadiagem">Art. 10.15 - Vadiagem</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 10.16 - Intoxicação pública" type="checkbox" class="form-check-input" name="crime"
-				value="10|4000|10000" onclick="calcular()">
-			<label class="form-check-label" title="Estar visivelmente embriagado ou sob a influência de drogas, ao mesmo tempo em que se comporta de maneira impetuosa, de maneira lasciva ou excessivamente palavrões em um lugar público
-			" for="Art. 10.16 - Intoxicação pública">Art. 10.16 - Intoxicação pública</label>
-		</div>
-		
-		<div class="col col-md-12">
-			<input id="Art. 10.17 - Perturbação da ordem" type="checkbox" class="form-check-input" name="crime"
-				value="0|5000|0" onclick="calcular()">
-			<label class="form-check-label" title="Pessoa está se comportando de maneira disruptiva, mas não apresenta sério perigo público.
-			" for="Art. 10.17 - Perturbação da ordem">Art. 10.17 - Perturbação da ordem
-		</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 10.18 - Perturbação do sossego alheio" type="checkbox" class="form-check-input" name="crime"
-				value="10|30000|50000" onclick="calcular()">
-			<label class="form-check-label" title="Pessoa está se comportando de maneira disruptiva, mas não apresenta sério perigo público.
-			" for="Art. 10.18 - Perturbação do sossego alheio">Art. 10.18 - Perturbação do sossego alheio
-
-		</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 10.19 - Omissão de socorro" type="checkbox" class="form-check-input" name="crime"
-				value="10|30000|50000" onclick="calcular()">
-			<label class="form-check-label" title="Deixar de prestar assistência, quando possível fazê-lo sem risco pessoal, à criança abandonada ou extraviada, ou à pessoa inválida ou ferida, ao desamparo ou em grave e iminente perigo; ou não pedir, nesses casos, o socorro da autoridade pública.
-			" for="Art. 10.19 - Omissão de socorro">Art. 10.19 - Omissão de socorro
-		</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 10.20 - Tráfico de influência" type="checkbox" class="form-check-input" name="crime"
-				value="10|30000|50000" onclick="calcular()">
-			<label class="form-check-label" title="Consiste na prática ilegal de uma pessoa se aproveitar da sua posição privilegiada dentro de uma empresa ou entidade, ou das suas conexões com pessoas em posição de autoridade, para obter favores ou benefícios para si própria ou terceiros, geralmente em troca de favores ou pagamento.
-			" for="Art. 10.20 - Tráfico de influência">Art. 10.20 - Tráfico de influência
-
-		</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 10.21 - Obstrução de justiça" type="checkbox" class="form-check-input" name="crime"
-				value="20|50000|80000" onclick="calcular()">
-			<label class="form-check-label" title="Impedir ilegalmente a descoberta, a apreensão, a condenação, a defesa ou a punição de quem cometeu um crime ou de provas. Exemplos são, mas não limitados a: fornecer informações falsas a agentes da policia enquanto são detidos / presos, destruírem ou adulterar provas, ou utilizar qualquer violência ou ameaça física contra uma testemunha, oficial da lei ou autoridade judicial para impedir que a justiça seja cumprida. Esta taxa também é aplicável quando uma pessoa isca ou intencionalmente quebra a lei para ganhar a atenção de um oficial da lei.
-			" for="Art. 10.21 - Obstrução de justiça">
-				Art. 10.21 - Obstrução de justiça
-
-		</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 10.22 - Peculato" type="checkbox" class="form-check-input" name="crime"
-				value="60|100000|200000" onclick="calcular()">
-			<label class="form-check-label" title="Caracteriza-se pela apropriação efetuada pelo funcionário público de dinheiro, valor ou qualquer outro bem móvel, público ou particular, de que tem a posse em razão do cargo, ou desviá-lo, em proveito próprio ou alheio." for="Art. 10.22 - Peculato">
-				Art. 10.22 - Peculato
-
-		</label>
-		</div>
-	</div>
-	<div id="3" class="fc quadro" style=" padding: 10px;">
-		<h3>
-			<font color="#022d42">DAS VIOLAÇÕES NO TRÂNSITO (CTB):</font>
-		</h3>
-		<!--
-	<div class="col col-md-12">
-		<input id="Art. 6.19 - Omissão de Socorro" type="checkbox" class="form-check-input" name="crime" value="15|25000|70000" onclick="calcular()">
-		<label class="form-check-label" for="Art. 6.19 - Omissão de Socorro">Art. 6.19 - Omissão de Socorro</label>
-	</div> -->
-		<div class="col col-md-12">
-
-			<input id="Art. 11.1 - Tentativa de Fuga" type="checkbox" class="form-check-input" name="crime"
-				value="35|50000|70000" onclick="calcular()">
-			<label class="form-check-label" for="Art. 11.1 - Tentativa de Fuga" title="Desobedecer a ordem de parada de um oficial ou se evadir de uma guarnição de qualquer forma.">Art. 11.1 - Tentativa de Fuga</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 11.2 - Condução Imprudente" type="checkbox" class="form-check-input" name="crime"
-				value="10|30000|60000" onclick="calcular()">
-			<label class="form-check-label" title="Condução descuidada, condução inadequada ou condução sem o devido cuidado e atenção e é frequentemente punível com multas, prisão ou suspensão ou revogação da carteira de motorista." for="Art. 11.2 - Condução Imprudente">Art. 11.2 - Condução
-				Imprudente</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 11.3 - Dirigir na Contra Mão" type="checkbox" class="form-check-input" name="crime"
-				value="1|30000|0" onclick="calcular()">
-			<label class="form-check-label" title="Viajando pelo caminho errado por uma estrada, contra o fluxo de tráfego. " for="Art. 11.3 - Dirigir na Contra Mão">Art. 11.3 - Dirigir na Contra
-				Mão</label>
-		</div>
-		<div class="col col-md-12">
-
-			<input id="Art. 11.4 - Alta Velocidade" type="checkbox" class="form-check-input" name="crime"
-				value="1|50000|0" onclick="calcular()">
-			<label class="form-check-label" title="Trafegar com um veiculo a mais de 200km/h" for="Art. 11.4 - Alta Velocidade">Art. 11.4 - Alta Velocidade</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 11.5 - Poluição Sonora" type="checkbox" class="form-check-input" name="crime"
-				value="10|50000|100000" onclick="calcular()">
-			<label class="form-check-label" title="Buzinas, buzinas de música ou motores de aceleração que causam um incômodo público. Os indivíduos devem ter a oportunidade de deixar de ser multados. " for="Art. 11.5 - Poluição Sonora">Art. 11.5 - Poluição Sonora</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 11.6 - Corridas Ilegais" type="checkbox" class="form-check-input" name="crime"
-				value="1|50000|0" onclick="calcular()">
-			<label class="form-check-label" title="Participar e/ou organizar de corridas ilegais. Condução imprudente sobre vias públicas e zonas rurais. " for="Art. 11.6 - Corridas Ilegais">Art. 11.6 - Corridas Ilegais</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 11.7 - Sem capacete" type="checkbox" class="form-check-input" name="crime"
-				value="5|50000|65000" onclick="calcular()">
-			<label class="form-check-label" title="Conduzir motocicleta sem capacete (vestuário de proteção)" for="Art. 11.7 - Sem capacete">Art. 11.7 - Sem capacete</label>
-		</div>
-		<div class="col col-md-12">
-			<input id="Art. 11.8 - Suspensão veicular alterada" type="checkbox" class="form-check-input" name="crime"
-				value="1|50000|65000" onclick="calcular()">
-			<label class="form-check-label" title="Modificar a suspensão de qualquer veiculo ou motocicleta que não seja a original do veiculo. (exeto os veiculos VIPs REBAIXADOS DE FABRICA que são considerados legalizados)" 
-			for="Art. 11.8 -Suspensão veicular alterada">Art. 11.8 - Suspensão veicular alterada</label>
-		</div>
-		<hr>
-		<h3>
-			<font color="#022d42">INFRAÇÕES DE TRÂNSITO (CTB):</font>
-		</h3>
-
-		<div class="col col-md-12">
-			<input id="Art. 12.1 - Uso Excessivo de Insulfilm" type="checkbox" class="form-check-input" name="crime"
-				value="0|25000|0" onclick="calcular()">
-			<label class="form-check-label" title="Se você não puder ver a pessoa no do veículo, a tonalidade está muito escura 30%+" for="Art. 12.1 - Uso Excessivo de Insulfilm">Art. 12.1 - Uso Excessivo de
-				Insulfilm</label>
-		</div>
-
-		<div class="col col-md-12">
-			<input id="Art. 12.2 - Veículo Muito Danificado" type="checkbox" class="form-check-input" name="crime"
-				value="0|25000|0" onclick="calcular()">
-			<label class="form-check-label" title="Veículo fortemente danificado (Reboque obrigatório do veículo, o bilhete pode ser emitido a critério do oficial)" for="Art. 12.2 - Veículo Muito Danificado">Art. 12.2 - Veículo Muito
-				Danificado</label>
-			</div>
-		<div class="col col-md-12">
-			<input id="Art. 12.3 - Veiculo Ilegalmente Estacionado" type="checkbox" class="form-check-input"
-				name="crime" value="0|30000|0" onclick="calcular()">
-			<label class="form-check-label" title="Estacionar em um lugar que não seja uma vaga de estacionamento, em uma pista de incêndio, bloqueando uma pista aliada ou a menos de 5 metros de um hidrante, o veículo é abandonado" for="Art. 12.3 - Veiculo Ilegalmente Estacionado">Art. 12.3 - Veiculo
-				Ilegalmente Estacionado</label>
-		</div>
-	</button>
-		<div class="col col-md-12">
-			<input id="Art. 12.5 - Blindagem no pneu" type="checkbox" class="form-check-input" name="crime" 
-			value="50|150000|200000" onclick="calcular()">
-			<label class="form-check-label" title="Alterar a resistencia do pneu usufroindo da blindagem para beneficio próprio, sem ser funcionário público."
-			for="Art. 12.5 - Blindagem no pneu">Art. 12.5 - Blindagem no Pneu </label>
-		</div>
-
-		<hr>
-		
-		<!-- 
-	<div class="col col-md-12">
-	
-		<input id="Art. 6.27 - Obstrução de Justiça" type="checkbox" class="form-check-input" name="crime" value="20|15000|20000" onclick="calcular()">
-		<label class="form-check-label" for="Art. 6.27 - Obstrução de Justiça">Art. 6.27 - Obstrução de Justiça</label>
-	</div>
-	<div class="col col-md-12">
-	
-		<input id="Art. 6.28 - Ocultação de Provas" type="checkbox" class="form-check-input" name="crime" value="10|25000|50000" onclick="calcular()">
-		<label class="form-check-label" for="Art. 6.28 - Ocultação de Provas">Art. 6.28 - Ocultação de Provas</label>
-	</div>
-	<div class="col col-md-12">
-		<input id="Art. 6.29 - Vadiagem" type="checkbox" class="form-check-input" name="crime" value="5|10000|15000" onclick="calcular()">
-		<label class="form-check-label" for="Art. 6.29 - Vadiagem">Art. 6.29 - Vadiagem</label>
-	</div>
-	<div class="col col-md-12">
-		<input id="Art. 6.30 - Injuria" type="checkbox" class="form-check-input" name="crime" value="10|20000|40000" onclick="calcular()">
-		<label class="form-check-label" for="Art. 6.30 - Injuria">Art. 6.30 - Injúria</label>
-	</div>
-	<div class="col col-md-12">
-		<input id="Art. 6.31 - Calunia" type="checkbox" class="form-check-input" name="crime" value="10|20000|40000" onclick="calcular()">
-		<label class="form-check-label" for="Art. 6.31 - Calunia">Art. 6.31 - Calúnia</label>
-	</div>
-	<div class="col col-md-12">
-		<input id="Art. 6.32 - Perjurio" type="checkbox" class="form-check-input" name="crime" value="10|20000|40000" onclick="calcular()">
-		<label class="form-check-label" for="Art. 6.32 - Perjurio">Art. 6.32 - Perjúrio</label>
-	</div>
-	<hr>
-		<div class="col col-md-12">
-		<input id="Art. 7.9 - Não Ceder Passagem a Viaturas" type="checkbox" class="form-check-input" name="crime" value="0|25000|0" onclick="calcular()">
-		<label class="form-check-label" for="Art. 7.9 - Não Ceder Passagem a Viaturas">Art. 7.9 - Não Ceder Passagem a Viaturas</label>
-	</div>
-	<div class="col col-md-12">
-		<input id="Art. 7.10 - Impedir o Fluxo do Tráfego" type="checkbox" class="form-check-input" name="crime" value="0|25000|0" onclick="calcular()">
-		<label class="form-check-label" for="Art. 7.10 - Impedir o Fluxo do Tráfego">Art. 7.10 - Impedir o Fluxo do Tráfego</label>
-	</div>
-	<div class="col col-md-12">
-		<input id="Art. 7.11 - Dano a Patrimônio Público" type="checkbox" class="form-check-input" name="crime" value="15|20000|40000" onclick="calcular()">
-		<label class="form-check-label" for="Art. 7.11 - Dano a Patrimônio Público">Art. 7.11 - Dano a Patrimônio Público</label>
-	</div>
-	-->
-
-
-
-
-		<h3>
-			<font color="#022d42">AGRAVANTES:</font>
-		</h3>
-
-		<div class="col col-md-12">
-
-			<input id="Art. 15.1.1 - Desacato 1" type="checkbox" class="form-check-input" name="crime"
-				value="50|150000|NA" onclick="calcular()">
-			<label class="form-check-label" title="Desacatar pode ser entendido como faltar com o respeito ou afrontar. O crime de desacato ocorre quando alguém ofende um funcionário público que está exercendo seu trabalho." for="Art. 15.1.1 - Desacato 1">Art. 15.1.1 - Desacato 1**</label>
-		</div>
-		<div class="col col-md-12">
-
-			<input id="Art. 15.1.2 - Desacato 2" type="checkbox" class="form-check-input" name="crime"
-				value="50|150000|NA" onclick="calcular()">
-			<label class="form-check-label" title="Desacatar pode ser entendido como faltar com o respeito ou afrontar. O crime de desacato ocorre quando alguém ofende um funcionário público que está exercendo seu trabalho." for="Art. 15.1.2 - Desacato 2">Art. 15.1.2 - Desacato 2**</label>
-		</div>
-		<div class="col col-md-12">
-
-			<input id="Art. 15.1.3 - Desacato 3" type="checkbox" class="form-check-input" name="crime"
-				value="50|150000|NA" onclick="calcular()">
-			<label class="form-check-label" titl="Desacatar pode ser entendido como faltar com o respeito ou afrontar. O crime de desacato ocorre quando alguém ofende um funcionário público que está exercendo seu trabalho." for="Art. 15.1.3 - Desacato 3">Art. 15.1.3 - Desacato 3**</label>
-		</div>
-		<div class="col col-md-12">
-
-			<input id="Art.  15.1.4 - Desacato 4" type="checkbox" class="form-check-input" name="crime"
-				value="50|150000|NA" onclick="calcular()">
-			<label class="form-check-label" title="Desacatar pode ser entendido como faltar com o respeito ou afrontar. O crime de desacato ocorre quando alguém ofende um funcionário público que está exercendo seu trabalho." for="Art.  15.1.4 - Desacato 4">Art. 15.1.4 - Desacato 4**</label>
-		</div>
-	<div class="col col-md-12">
-
-			<input id="Art. 15.2 - Resistência a Prisão" type="checkbox" class="form-check-input" name="crime"
-				value="20|0|0" onclick="calcular()">
-			<label class="form-check-label" title="O ato de se opor ou resistir à execução de ato legal, com violência ou ameaça, à pessoa que o esteja praticando." for="Art. 15.2 - Resistência a Prisão">Art. 15.2 - Resistência a
-				Prisão</label>
-		</div>
-		<div class="col col-md-12">
-
-			<input id="Art.  15.3 - Réu Reincidente" type="checkbox" class="form-check-input reincidente" name="crime"
-				value="10|0|0" onclick="calcular()">
-			<label class="form-check-label" title="O ato de cometer o crime ja cometido anteriormente." for="Art.  15.3 - Réu Reincidente">Art. 15.3 - Réu Reincidente</label>
-		</div>
-		<hr>
-	<h3>CRIMES MÉDIOS</h3>
-	<div class="col col-md-12">
-			<input id="Art. 15.4 - Cúmplice" type="checkbox" class="form-check-input" name="crime" value="0|15000|0" onclick="calcular()">
-		<label class="form-check-label" title="Quem, dolosamente e por qualquer forma, prestar auxílio material ou moral à prática por outrem de um facto doloso." for="Art. 15.4 - Cúmplice">Art. 15.4 - Cúmplice</label>
-	</div>
-	<div class="col col-md-12">
-			<input id="Art. 15.5 - Colisão Proposital a Viatura" type="checkbox" class="form-check-input" name="crime" value="0|20000|0" onclick="calcular()">
-		<label class="form-check-label" title="O ato de propositalmente colidir com o veiculo pessoal contra a viatura policial" for="Art. 15.5 - Colisão Proposital a Viatura">Art. 15.5 - Colisão Proposital a Viatura</label>
-	</div>
-	<div class="col col-md-12">
-			<input id="Art. 15.6 - Contrabando" type="checkbox" class="form-check-input" name="crime" value="0|200000|0" onclick="calcular()">
-		<label class="form-check-label" title="Importar ou exportar mercadoria proibida ou iludir, no todo ou em parte, o pagamento de direito ou imposto devido pela entrada, pela saída ou pelo consumo de mercadoria." for="Art. 15.6 - Contrabando">Art. 15.6 - Contrabando</label>
-	</div>
-	<div class="col col-md-12">
-			<input id="Art. 15.9 - Desmanche de Veiculos" type="checkbox" class="form-check-input" name="crime" value="0|70000|0" onclick="calcular()">
-		<label class="form-check-label" title="Regula e disciplina a atividade de desmontagem de veículos automotores terrestres" for="Art. 15.9 - Desmanche de Veiculos">Art. 15.9 - Desmanche de Veiculos</label>
-	</div>
-	<div class="col col-md-12">
-			<input id="Art. 16.1 - Disparo de Arma" type="checkbox" class="form-check-input" name="crime" value="0|50000|0" onclick="calcular()">
-		<label class="form-check-label" title="Disparar arma de fogo ou acionar munição em lugar habitado ou em suas adjacências, em via pública ou em direção a ela, desde que essa conduta não tenha como finalidade a prática de outro crime" for="Art. 16.1 - Disparo de Arma">Art. 16.1 - Disparo de Arma</label>
-	</div>
-	<div class="col col-md-12">
-			<input id="Art. 16.2 - Descaminho" type="checkbox" class="form-check-input" name="crime" value="0|100000|0" onclick="calcular()">
-		<label class="form-check-label" title="Iludir, no todo ou em parte, o pagamento de direito ou imposto devido pela entrada, pela saída ou pelo consumo de mercadoria" for="Art. 16.2 - Descaminho">Art. 16.2 - Descaminho</label>
-	</div>
-	<div class="col col-md-12">
-			<input id="Art. 16.5 - Impedir o Fluxo do Tráfego" type="checkbox" class="form-check-input" name="crime" value="0|15000|0" onclick="calcular()">
-		<label class="form-check-label" title="Usar qualquer veículo para, deliberadamente, interromper, restringir ou perturbar a circulação na via sem autorização do órgão ou entidade de trânsito com circunscrição sobre ela" for="Art. 16.5 - Impedir o Fluxo do Tráfego">Art. 16.5 - Impedir o Fluxo do Tráfego</label>
-	</div>
-	<div class="col col-md-12">
-			<input id="Art 16.6 - Ocultação de Provas" type="checkbox" class="form-check-input" name="crime" value="0|50000|0" onclick="calcular()">
-		<label class="form-check-label" title="Destruir, suprimir ou ocultar, em benefício próprio ou de outra pessoa, ou em prejuízo alheio, documento público ou particular verdadeiro, de que não podia dispor" for="Art 16.6 - Ocultação de Provas">Art 16.6 - Ocultação de Provas</label>
-	</div>
-	<div class="col col-md-12">
-			<input id="Art 16.7 - Zaralho em Recrutamento Policial" type="checkbox" class="form-check-input" name="crime" value="0|100000|0" onclick="calcular()">
-		<label class="form-check-label" title="Realizar brincadeiras, agir de má fé e ter o intuito de apenas ir em um concurso público policial com o intuito de atrapalhar" for="Art 16.7 - Zaralho em Recrutamento Policial">Art 16.7 - Zaralho em Recrutamento Policial</label>
-	</div>
-
-	</div>
-
-	
-
-	
-	<div class="fc quadro" style="padding: 10px;">
-		<h3>
-			<font color="#000000"> 🧮 CALCULADORA</font>
-		</h3>
-		<font color="#000000">
-			<h4>⚖️ PENA:</h4>
-			<input type="text" id="pena" name="pena" class="form-control" readonly="true" size="2"
-				style="margin-right:5px">
-				<div class="alert alert-success" id="penamaxima" style="display: none;" role="alert">
-					A pena total do mesmo excedeu 100 MESES.
-				</div>
-				
-			<h4>💸 MULTA: </h4> <input type="text" id="multa" name="multa" class="form-control" readonly="true" size="5"
-				style="margin-right:15px">
-			<h4>💸 FIANÇA: </h4> <input type="text" id="fianca" name="fianca" class="form-control" readonly="true"
-				size="8" style="margin-right:10px">
-			<input hidden id="fianca-hidden">
-			<br>
-				<h3 style="margin: 5px;">CRIMES (ARTIGOS SELECIONADOS):</h3>
-				<textarea rows="10" cols="50" style="resize: none;" readonly="true" maxlength="500" id="copy-text"
-					class="TextoArtigos form-control"></textarea>
-
-				<br> <button class="btn btn-success" id="copy"> <i class="bi bi-clipboard"></i> Copiar</button>
-				<br>
-				<br> <button class="btn btn-danger" onclick="limpar()"><i class="bi bi-trash"></i> Limpar</button>
-				<br>
-						
-				<div class="alert alert-success" id="copiado" style="display: none;" role="alert">
-					Copiado com sucesso
-				</div>
-				<div class="alert alert-success" id="alerta" style="display: none;" role="alert">
-					Escolha os crimes
-				</div>
-				<div class="alert alert-success" id="alerta-1" style="display: none;" role="alert">
-					Informe o RG do Advogado
-				</div>
-				<div class="alert alert-success" id="alerta-2" style="display: none;" role="alert">
-					Informe o Nome do Cliente
-				</div>
-				<div class="alert alert-success" id="alerta-3" style="display: none;" role="alert">
-					Informe o RG do Cliente
-				</div>
-                <div class="alert alert-success" id="alerta-4" style="display: none;" role="alert">
-					Crime Inafiançavel
-				</div>
-				<h3 style="margin: 10px;">
-					<font color="#022d42">ATENUANTES:</font>
-				</h3>
-				<h4 style="margin: 10px;">
-					<font color="#b50000">
-						<input type="checkbox" class="form-check-input" id="advogado-30" name="advogado-30"
-							value="20">🔹 Advogado constituído:
-						<font color="#6f747a">Redução de 20% na pena total.
-							<div class="col col-md-12 advogado-1" style="display: none;">
-								<h4>
-									<font color="#b50000"><input id="reu-primario" type="checkbox"
-											class="form-check-input" value="30" name="reu-primario">🔹 Réu primário:
-										<font color="#6f747a">Redução de 30% na pena total.
-							</div>
-							<div class="col col-md-12 advogado-2" style="display: none;">
-								<h4>
-									<font color="#b50000"><input id="reu-confesso" type="checkbox"
-											class="form-check-input" value="20" name="reu-confesso">🔹 Réu confesso:
-										<font color="#6f747a">Redução de 20% na pena total.
-								</h4>
-							</div>
-							<div class="col col-md-12 advogado-3" style="display: none;">
-
-							<input type="checkbox" class="form-check-input" id="delacao-premiada" name="delacao-premiada"
-							>🔹 Delação premiada:<font color="#6f747a">Critério do
-								policial.</font>
-							</div>
-
-							<div class="col col-md-12 delacao" style="display: none;">
-								<font color="#b50000">
-									<div class="col col-md-12" style="padding-left: 5%;">
-										<input id="delacao1" class="form-control" min="0" max="100"
-											type="number" name="delacao1">
-									</div>
-							</div>
-							<br>
-							<input type="checkbox" class="form-check-input" id="mandado" name="mandado"
-							value="500">🔹 Mandado de busca e apreensão: <font color="#6f747a"> Ordem do juiz, mandando que se apreenda coisa em poder de outrem ou em certo lugar, para ser trazida a juízo e aí ficar sob custódia do próprio juiz, mesmo que em poder de um depositário por ele designado ou do depositário público.
-							<br>
-							<input type="checkbox" id="fiancaP" name="fiancaP"
-							class="form-check-input" type="checkbox" 
-							value="1"
-								title="Marque se o indivíduo pagou a fiança.">
-								🔻 FIANÇA
-							<textarea rows="10" cols="50" style="resize: none; display: none;" readonly="true" maxlength="500" id="discord-text"></textarea>
-
-
-	</div>
-
-
-	<input hidden id="pena-delacao" type="number"  value="0">
-	<input hidden id="pena-reducao" type="number" value="0">
-
-
-
-
-</div>
-
-<script
-		type="text/javascript">(function () { window['__CF$cv$params'] = { r: '6d4ede693a774cf7', m: 'c1hW1Rh0H4tuZl0wsr8lc_PxHochVPe94cU5za3H6pc-1643421646-0-AZgReWNppiCIufGN9b0SQAKCqRsLtHcwRgDjgAZ+Ebwly7w0zsT9G6XS1O/UzoI0KiHefNZG3S1S37LGPme9exr6Q+bETOtZoXvE80b2jTfbfvhbNPPCZOseNmfBmgNt6A/HEo8div1AtL5xdFuLfRozIq3iNLhezke9DJu8FQdEnFcZ+SAUTYcHVynGr69bHeJn9/0I1C6Z2kVFP5+t1xjmrXaI1cyd880XCyhvg3kG', s: [0xa3d3168605, 0xba02de72f3], } })();</script>
-	<script
-		type="text/javascript">(function () { window['__CF$cv$params'] = { r: '6d55320baf256030', m: 'ZIEu.pp.iZbUyq5KJvDLfjpPqMeOMxiNGM_gE_5Duyk-1643487986-0-AcUKQeDM0xlzizuzSCE1OWs4UCC/gTki/Wf/ptjXki9iQ5VGlYhrXoxDtlJyTdabd/omn/0PoOs+p2TFELZ2mXXA6xQBQ2b+78uInsszFfSZ930uS3lQhVc0pV+mm90Hi0ieWJJmSuym9EtYDi4CGxRFI1YKe+wVHyalMeXttvlzsYErYN8azcWTRNNeh5t9RbTkmCwQHWLPNxXvCr0wo0DuT9CtjXmfznyCLMi9IUpe', s: [0x6efed7905d, 0x60ab50310e], } })();</script>
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-	<script type="text/javascript">
-		$(document).ready(async function () {
-			$(this).tooltip();
-			try {
-				const {state} = await navigator.permissions.query({name: 'clipboard-write'})
-				return state === "granted"
-			} catch{
-				return false;
-			}
-		});
-		var atenuante = [];
-		var penaRe = 0;
-
-		$("#mandado").change(function(){
-			if ($("#mandado")[0].checked === false) {
-				atenuante[5] = "";
-				calcular();
-			} else{
-				atenuante[5] = ["🔹 Mandado de busca e apreensão"]
-			}
-		})
-
-		$("#1 :checkbox").change(function () {
-			let textAreaVal = $(".TextoArtigos").val();
-			if ($(this).prop("checked") == true) {
-				if (!textAreaVal.includes($(this).attr("id"))) {
-					textAreaVal += $(this).attr("id") + "\n";
-				}
-			}
-			else {
-				if (textAreaVal.includes($(this).attr("id"))) {
-					textAreaVal = textAreaVal.replace($(this).attr("id") + "\n", "");
-				}
-			}
-			$(".TextoArtigos").val(textAreaVal);
-		});
-		$("#2 :checkbox").change(function () {
-			let textAreaVal = $(".TextoArtigos").val();
-			if ($(this).prop("checked") == true) {
-				if (!textAreaVal.includes($(this).val())) {
-					textAreaVal += $(this).attr("id") + "\n";
-				}
-
-			}
-			else {
-				if (textAreaVal.includes($(this).attr("id"))) {
-					textAreaVal = textAreaVal.replace($(this).attr("id") + '\n', "");
-				}
-			}
-			$("#pena-reducao")[0].value = 0;
-			$(".TextoArtigos").val(textAreaVal);
-		});
-		$("#3 :checkbox").change(function () {
-			let textAreaVal = $(".TextoArtigos").val();
-			if ($(this).prop("checked") == true) {
-				if (!textAreaVal.includes($(this).val())) {
-					textAreaVal += $(this).attr("id") + "\n";
-				}
-
-			}
-			else {
-				if (textAreaVal.includes($(this).attr("id"))) {
-					textAreaVal = textAreaVal.replace($(this).attr("id") + '\n', "");
-				}
-			}
-			$(".TextoArtigos").val(textAreaVal);
-		});
-		
-		$("#delacao-premiada").change(function () {
-			if ($("#delacao-premiada")[0].checked === false) {
-				delete atenuante[3]
-
-				$(".delacao")[0].style.display = 'none';
-				penaRe = penaRe - parseInt($("#delacao1")[0].value);
-				$("#delacao1")[0].value = 0;
-				$("#delacao-premiada")[0].checked = false;
-				calcular();
-			} else{
-				$(".delacao")[0].style.display = 'block';
-				calcular();
-
-			}
-		})
-
-
-
-		// Nix 08/07/2022
-		$("#delacao1").focusout(function () {
-			if ($("#delacao1")[0].value < 0 && $("#delacao1")[0].value > 100) {
-				alert("Informe um valor válido entre 0 a 100%")
-			} else{
-			}  if (!$("#delacao1")[0].value) {
-				calcular();
-			}
-				else {
-					console.log(penaRe);
-					var pena = $("#pena-reducao")[0].value;
-					var Pena = 0;
-					var fiancaReduzir = 0;
-					var fiancaC = 0;
-					var pena_txt = document.getElementById("pena");
-					var crimes = document.getElementsByName('crime');
-					var fianca_txt = document.getElementById("fianca");
-					for (var i = 0; i < crimes.length; i++) {
-						if (crimes[i].checked) {
-							var valores_crime = crimes[i].value.split("|");
-							Pena += parseInt(valores_crime[0]);
-							fiancaC += parseInt(valores_crime[2]);
-						}
-					}
-					var sujo = parseInt(document.getElementById("sujo").value);
-					if (sujo > 0) {
-						var unidade_sujo = sujo / 10000;
-						if (sujo >= 1000) {
-							fiancaC += sujo / 100 * 50;
-
-						}
-					}
-					penaRe = penaRe + parseInt($("#delacao1")[0].value);
-
-					if(!atenuante.includes("Delação Premiada")){
-						atenuante[3] = ["\n* 🔹 Delação Premiada: Redução de "+ $("#delacao1")[0].value +"% na pena total"]
-					}
-
-					calcular();
-						/*
-						pena = parseInt(pena) + parseInt($("#delacao-premiada")[0].value);
-						if (pena > 100) {
-							pena = 100;
-						}
-						$("#pena-reducao").val(pena);
-						penaReduzir = Pena * pena / 100;
-						pena_txt.value = Pena - penaReduzir;*/
-			}
-		});
-
-		$("#reu-confesso").change(function () {
-			var pena_txt = document.getElementById("pena");
-			var penaReduzir = 0;
-			$("pena-reducao").val(0);
-
-			if ($("#reu-confesso")[0].checked === false) {
-				delete atenuante[2]
-				penaRe = penaRe - 20;
-
-				$("#reu-confesso")[0].checked = false;
-				calcular();
-			} else{
-					var pena = $("#pena-reducao")[0].value;			
-					var Pena = 0;
-					var penaReduzir = 0;
-					var fiancaReduzir = 0;
-					var fiancaC = 0;
-					var pena_txt = document.getElementById("pena");
-					var crimes = document.getElementsByName('crime');
-					var fianca_txt = document.getElementById("fianca");
-					for (var i = 0; i < crimes.length; i++) {
-						if (crimes[i].checked) {
-							var valores_crime = crimes[i].value.split("|");							
-							Pena += parseInt(valores_crime[0]);
-							fiancaC += parseInt(valores_crime[2]);
-						}
-					}
-					var sujo = parseInt(document.getElementById("sujo").value);
-					if (sujo > 0) {
-						var unidade_sujo = sujo / 10000;
-						if (sujo >= 1000) {
-							fiancaC += sujo / 100 * 50;
-
-						}
-					}/*
-						pena = parseInt(pena) + parseInt(20);
-						if(pena === 0){
-							pena = parseInt(pena) - parseInt(20);
-						}
-						
-						if (pena > 70) {
-							pena = 70;
-						}
-
-						$("#pena-reducao").val(pena);
-						penaReduzir = Pena * pena / 100;
-						pena_txt.value = Pena - penaReduzir;*/
-						penaRe = penaRe + 20;
-
-						if(!atenuante.includes("Réu confesso")){
-						atenuante[2] = ["\n* 🔹 Réu confesso: Redução de 20% na pena total"]
-					}
-					calcular();
-
-			}
-
-		})
-		// Nix 08/07/2022
-		$("#reu-primario").change(function () {
-			var pena_txt = document.getElementById("pena");
-			var penaReduzir = 0;
-			$("pena-reducao").val(0);
-			if ($("#reu-primario")[0].checked === false) {
-				$("#reu-primario")[0].checked = false;
-					delete atenuante[1]
-					penaRe = penaRe - 20;
-
-				calcular();
-			} else{
-					var pena = $("#pena-reducao")[0].value;
-					var Pena = 0;
-					var penaReduzir = 0;
-					var fiancaReduzir = 0;
-					var fiancaC = 0;
-					var pena_txt = document.getElementById("pena");
-					var crimes = document.getElementsByName('crime');
-					var fianca_txt = document.getElementById("fianca");
-					for (var i = 0; i < crimes.length; i++) {
-						if (crimes[i].checked) {
-							var valores_crime = crimes[i].value.split("|");
-							Pena += parseInt(valores_crime[0]);
-							fiancaC += parseInt(valores_crime[2]);
-						}
-					}
-					var sujo = parseInt(document.getElementById("sujo").value);
-					if (sujo > 0) {
-						var unidade_sujo = sujo / 10000;
-						if (sujo >= 1000) {
-							fiancaC += sujo / 100 * 50;
-
-						}
-					}
-
-					penaRe = penaRe + 30;
-
-					/*
-						pena = parseInt(pena) + parseInt(20);
-						if(pena === 0){
-							pena = parseInt(pena) - parseInt(20);
-						}
-						
-						if (pena > 70) {
-							pena = 70;
-						}
-
-						$("#pena-reducao").val(pena);
-						penaReduzir = Pena * pena / 100;
-						pena_txt.value = Pena - penaReduzir;*/
-					if(!atenuante.includes("Réu primário")){
-						atenuante[1] = ["\n* 🔹 Réu primário: Redução de 30% na pena total"]
-					}
-					calcular();
-
-			}
-
-
-		});
-		// Nix 08/07/2022
-
-		// Nix 08/07/2022
-		function recalcularPena() {
-			var pena_txt = document.getElementById("pena");
-			var fianca_txt = document.getElementById("fianca");
-			var Fianca = 0;
-			var penaRed = $("#pena-reducao")[0].value;
-			var Pena = 0;
-			var crimes = document.getElementsByName('crime');
-			for (var i = 0; i < crimes.length; i++) {
-				if (crimes[i].checked) {
-					var valores_crime = crimes[i].value.split("|");
-					Pena += parseInt(valores_crime[0]);
-					Fianca += parseInt(valores_crime[2]);
-					/*Condicional += parseInt(valores_crime[0])*4; */
-				}
-			}
-			
-
-			/* dinheiro sujo */
-			var sujo = parseInt(document.getElementById("sujo").value);
-			if (sujo > 0) {
-				var unidade_sujo = sujo / 10000;
-				if (sujo >= 1000) {
-					Fianca += sujo / 100 * 50;
-
-				}
-			}
-			
-			pena_txt.value = Pena;
-			if (isNaN(Fianca) || $("#mandado")[0].checked == true) {
-				fianca_txt.value = "SEM FIANÇA";
-			} else {
-				fianca_txt.value = "R$" + Fianca.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
-			}
-		}
-		// Nix 08/07/2022
-		$("#advogado-30").change(function () {
-			if($(".TextoArtigos")[0].value  == ""){
-				$("#advogado-30")[0].checked = false;
-				$("#alerta")[0].style.display = 'block';
-				const timeOut = setTimeout(crimesPena, 3000);
-			} else{
-				if($("#adv_rg")[0].value == ""){
-						$("#advogado-30")[0].checked = false;
-						$("#alerta-1")[0].style.display = 'block';
-						const timeOut = setTimeout(advConst, 3000);
-					} else {
-					if ($("#advogado-30")[0].checked === true) {
-						var pena = $("#pena-reducao")[0].value;
-						var Pena = 0;
-						var penaReduzir = 0;
-						var fiancaReduzir = 0;
-						var fiancaC = 0;
-						var pena_txt = document.getElementById("pena");
-						var crimes = document.getElementsByName('crime');
-						var fianca_txt = document.getElementById("fianca");
-						for (var i = 0; i < crimes.length; i++) {
-							if (crimes[i].checked) {
-								var valores_crime = crimes[i].value.split("|");
-								Pena += parseInt(valores_crime[0]);
-								fiancaC += parseInt(valores_crime[2]);
-							}
-						}
-						var sujo = parseInt(document.getElementById("sujo").value);
-						if (sujo > 0) {
-							var unidade_sujo = sujo / 10000;
-							if (sujo >= 1000) {
-								fiancaC += sujo / 100 * 50;
-
-							}
-						}
-
-
-											
-						penaRe = penaRe + 20;
-						$(".advogado-1")[0].style.display = 'block';
-						$(".advogado-2")[0].style.display = 'block';
-						$(".advogado-3")[0].style.display = 'block';
-						if(!atenuante.includes("Advogado constituído")){
-							atenuante[0] = ["\n* 🔹 Advogado constituído: Redução de 20% na pena total"]
-							}
-							calcular();
-
-					} else {
-						penaRe = 0;
-						$(".advogado-1")[0].style.display = 'none';
-						$(".advogado-2")[0].style.display = 'none';
-						$(".advogado-3")[0].style.display = 'none';
-						$("#reu-confesso")[0].checked = false;
-						$("#reu-primario")[0].checked = false;
-						$("#delacao-premiada")[0].value = "";
-						atenuante = [""];
-						calcular();
-					
-					} 
-				}
-			}
-
-		});
-		$("#fiancaP").change(function () {
-			if($(".TextoArtigos")[0].value  == ""){
-				$("#fiancaP")[0].checked = false;
-				$("#alerta")[0].style.display = 'block';
-				const timeOut = setTimeout(crimesPena, 3000);
-			} else{
-				if($("#adv_rg")[0].value == ""){
-						$("#advogado-30")[0].checked = false;
-						$("#alerta-1")[0].style.display = 'block';
-						const timeOut = setTimeout(advConst, 3000);
-						$("#fiancaP")[0].checked = false;
-
-					} 
-				else {
-				fianca_txt = document.getElementById("fianca");
-				if ($("#fiancaP")[0].checked === true && fianca_txt.value != "SEM FIANÇA") {
-					if(!atenuante.includes("Fiança paga")){
-						atenuante[4] = ["\n* 🔹 Fiança paga"]
-					}
-					var pena_txt = document.getElementById("pena");
-					pena_txt.value = 1;
-					$("#reu-confesso")[0].checked = false;
-					$("#reu-primario")[0].checked = false;
-					$("#advogado-30")[0].checked = false;
-					$(".advogado-3")[0].style.display = 'none';
-					$("#delacao-premiada")[0].value = "";
-
-				} else if($("#fiancaP")[0].checked === false ) {
-						atenuante[4] = ""
-					
-					calcular();
-				} else {
-					$("#alerta-4")[0].style.display = 'block';
-					const timeOut = setTimeout(inafiancavel, 3000);
-					$("#fiancaP")[0].checked = false;
-					calcular();
-					
-				}
-				}
-			}
-		})
-
-
-
-		function calcular() {
-			var Pena = 0;
-			var Multa = 0;
-			var Fianca = 0;
-			var penaReduzir = 0;
-			var fiancaReduzir = 0;
-			/* Crimes */
-			var crimes = document.getElementsByName('crime');
-			for (var i = 0; i < crimes.length; i++) {
-				if (crimes[i].checked) {
-					var valores_crime = crimes[i].value.split("|");
-					Pena += parseInt(valores_crime[0]);
-					Multa += parseInt(valores_crime[1]);
-					Fianca += parseInt(valores_crime[2]);
-					/*Condicional += parseInt(valores_crime[0])*4; */
-				}
-			}
-	
-			/* dinheiro sujo */
-			var sujo = parseInt(document.getElementById("sujo").value);
-			if (sujo > 0) {
-				var unidade_sujo = sujo / 10000;
-				if (sujo >= 1000) {
-					Multa += sujo / 100 * 50;
-					Fianca += sujo / 100 * 50;
-
-				}
-			}
-			
-			
-			var fianca_txt = document.getElementById("fianca");
-			var pena_txt = document.getElementById("pena");
-			
-			if ($("#advogado-30")[0].checked === true) {
-				fiancaReduzir = Fianca * 30 / 100;
-				Fianca = Fianca - fiancaReduzir;
-				if (isNaN(fiancaReduzir) || $("#mandado")[0].checked == true) {
-				fianca_txt.value = "SEM FIANÇA";}
-				else{
-					fianca_txt.value = "R$" + fiancaReduzir.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
-				}
-			} 
-
-			if (penaRe > 70 && $("#fiancaP")[0].checked === false ){
-				penaRe = 70;
-			}
-			if(penaRe > 0){
-				penaReduzir = Pena * parseInt(penaRe) / 100;
-				pena_txt.value = Pena - penaReduzir;
-			} else{
-				pena_txt.value = Pena;
-			}
-			
-
-			var multa_txt = document.getElementById("multa");
-			multa_txt.value = "R$" + Multa.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
-			if (isNaN(Fianca) || $("#mandado")[0].checked == true) {
-				fianca_txt.value = "SEM FIANÇA";
-			} else {
-				fianca_txt.value = "R$" + Fianca.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
-			}
-
-
-		
-		}
-		function limpar() {
-			var crimes = document.getElementsByName('crime');
-			for (var i = 0; i < crimes.length; i++) {
-				crimes[i].checked = false;
-			}
-			$("#reu-primario")[0].checked = false
-			$("#reu-confesso")[0].checked = false
-			$("#advogado-30")[0].checked = false
-			$("#delacao-premiada")[0].checked = false
-			$("#fiancaP")[0].checked = false
-			$("#mandado")[0].checked = false
-			$("#copiado")[0].style.display = 'none'
-			$("#delacao1").val("");
-			$("#fianca")[0].value = "";
-			$("#pena")[0].value = "";
-			$("#multa")[0].value = "";
-			$("#sujo")[0].value = "";
-			$("#copy-text")[0].value = "";
-			$(".advogado-1")[0].style.display = 'none';
-			$(".advogado-2")[0].style.display = 'none';
-			$(".advogado-3")[0].style.display = 'none';
-			atenuante = "";
-			$('#preso_rg').val("")
-			$("#multa").val("")
-            $("#prs_nm").val("")
-            $("#prs_rg").val("")
-			$("#adv_rg").val("")
-			$("#rg_oficiais").val("")
-			$("#pena-reducao").val(0);
-		}
-		$("#copy").click(async function(){
-		if($(".TextoArtigos").val() != "" && 
-			$('#pena').val()!= "" &&
-			$("#multa").val()!= "") {
-				
-			calcular();
-            var fiancaTxT= ""
-
-			var Pena = 0
-			var Fianca = 0;
-			var fiancaTxt = "";
-			var crimes = document.getElementsByName('crime');
-			for (var i = 0; i < crimes.length; i++) {
-				if (crimes[i].checked) {
-					var valores_crime = crimes[i].value.split("|");
-					Pena += parseInt(valores_crime[0]);
-					Fianca += parseInt(valores_crime[2]);
-
-				}
-			}
-			
-
-            if ($("#advogado-30")[0].checked === true) {
-                if (Pena != 0 ){
-                    if (isNaN(Fianca) || $("#mandado")[0].checked == true) {
-                        fiancaTxT = "SEM FIANÇA";
-		            	$('#rFianca').html('FIANÇA: '+ fiancaTxT);
-
-                    }
-                    else{
-                        fiancaTxT = "R$" + Fianca.toLocaleString('pt-BR', { minimumFractionDigits: 2 }) + "(70%)";
-			            $('#rFianca').html('FIANÇA: '+ fiancaTxT);
-                    }
-
-                }
-            }
-			var text = document.getElementById('discord-text');
-			var fianca = ''
-			if($("#fiancaP")[0].checked == 1){
-				fianca = "Sim"
-			} else{
-				fianca = "Não"
-			}
-			if(atenuante != ""){
-				text.innerHTML = "```md"
-                +"\n# INFORMAÇÕES DO PRESO"
-                +"\n* Nome: " + $("#prs_nm").val()
-                +"\n* RG: " + $("#prs_rg").val()
-                +"\n"
-                +"\n# CRIMES:\n"
-                +"\n"
-                + $(".TextoArtigos").val()
-				+"\n# ATENUANTES:\n" + atenuante
-                +"\n"
-				+"\n# FIANÇA: " + fianca 
-				+"\n# ADVOGADO: " + $("#adv_rg").val() + "(RG)"
-				+"\n```"
-			} else {
-				text.innerHTML ="```md"
-				+"\n"
-				+$(".TextoArtigos").val()
-				+"\n```"
-			}
-				const blobt = new Blob([text.innerHTML], {type: 'text/plain'})
-				await setToClipboard(blobt);
-		} else{
-
-		}
-		})
-
-		const setToClipboard = async blob => {
-				const dataItem = [new ClipboardItem({ [blob.type]: blob})]
-				await navigator.clipboard.write(dataItem);
-			}
-
-		function tirarPena(){
-		$("#penamaxima")[0].style.display = 'none';
-		}
-
-		function crimesPena(){
-		$("#alerta")[0].style.display = 'none';
-		}
-		function advConst(){
-		$("#alerta-1")[0].style.display = 'none';
-		}
-		function NomePreso(){
-		$("#alerta-2")[0].style.display = 'none';
-		}
-        function RgPreso(){
-        $("#alerta-3")[0].style.display = 'none';
-        }
-		function inafiancavel(){
-		$("#alerta-4")[0].style.display = 'none';
-		}
-		function tirarBloco() {
-			$("#copiado")[0].style.display = 'none';
-		}
-	</script>
-
-	
-
-	
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Penal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="informacoes-superiores">
+        <div class="campo-info">
+            <h4 class="rotulo">NOME DO CLIENTE</h4>
+            <input type="text" id="nome-cliente" placeholder="NOME DO CLIENTE">
+        </div>
+        <div class="campo-info">
+            <h4 class="rotulo">RG DO CLIENTE</h4>
+            <input type="text" id="rg-cliente" placeholder="RG DO CLIENTE">
+        </div>
+        <div class="campo-info" id="logo-oab-container">
+            <h4 class="rotulo">LOGO DA OAB</h4>
+            </div>
+        <div class="campo-info">
+            <h4 class="rotulo">NOME DO ADVOGADO</h4>
+            <input type="text" id="nome-advogado" placeholder="NOME DO ADVOGADO">
+        </div>
+        <div class="campo-info">
+            <h4 class="rotulo">RG DO ADVOGADO</h4>
+            <input type="text" id="rg-advogado" placeholder="RG DO ADVOGADO">
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="coluna-artigos" id="coluna-1">
+            <h4 class="rotulo">CRIMES 101 - 138</h4>
+            <div class="artigos-container">
+                <div class="artigo-quadro" data-artigo="101" data-pena="100" data-multa="100000" data-fianca="nao">
+                    <p>Art. 101 - Azaralho em recrutamento policial</p>
+                    <p>Pena: 100 meses</p>
+                    <p>Multa: R$ 100.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="102" data-pena="35" data-multa="100000" data-fianca="nao">
+                    <p>Art. 102 - Prisão Militar</p>
+                    <p>Pena: 35 meses</p>
+                    <p>Multa: R$ 100.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="103" data-pena="35" data-multa="100000" data-fianca="nao">
+                    <p>Art. 103 - Prevaricação</p>
+                    <p>Pena: 35 meses</p>
+                    <p>Multa: R$ 100.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="104" data-pena="35" data-multa="150000" data-fianca="nao">
+                    <p>Art. 104 - Homicidio Doloso Qualificado</p>
+                    <p>Pena: 35 meses</p>
+                    <p>Multa: R$ 150.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="105" data-pena="30" data-multa="900000" data-fianca="nao">
+                    <p>Art. 105 - Tentativa de Homicidio</p>
+                    <p>Pena: 30 meses</p>
+                    <p>Multa: R$ 900.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="106" data-pena="10" data-multa="15000" data-fianca="nao">
+                    <p>Art. 106 - Lesão Corporal</p>
+                    <p>Pena: 10 meses</p>
+                    <p>Multa: R$ 15.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="107" data-pena="50" data-multa="100000" data-fianca="nao">
+                    <p>Art. 107 - Sequestro</p>
+                    <p>Pena: 50 meses</p>
+                    <p>Multa: R$ 100.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="108" data-pena="15" data-multa="50000" data-fianca="nao">
+                    <p>Art. 108 - Cárcere Privado</p>
+                    <p>Pena: 15 meses</p>
+                    <p>Multa: R$ 50.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="109" data-pena="20" data-multa="60000">
+                    <p>Art. 109 - Furto</p>
+                    <p>Pena: 20 meses</p>
+                    <p>Multa: R$ 60.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="110" data-pena="15" data-multa="50000">
+                    <p>Art. 110 - Receptação de Veiculos</p>
+                    <p>Pena: 15 meses</p>
+                    <p>Multa: R$ 50.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="111" data-pena="10" data-multa="20000">
+                    <p>Art. 111 - Tentativa de Furto</p>
+                    <p>Pena: 10 meses</p>
+                    <p>Multa: R$ 20.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="112" data-pena="25" data-multa="40000">
+                    <p>Art. 112 - Furto de Veiculos</p>
+                    <p>Pena: 25 meses</p>
+                    <p>Multa: R$ 40.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="113" data-pena="15" data-multa="20000">
+                    <p>Art. 113 - Invasão de Propriedade</p>
+                    <p>Pena: 15 meses</p>
+                    <p>Multa: R$ 20.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="114" data-pena="30" data-multa="40000">
+                    <p>Art. 114 - Apropriação indebita</p>
+                    <p>Pena: 30 meses</p>
+                    <p>Multa: R$ 40.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="115" data-pena="10" data-multa="100000">
+                    <p>Art. 115 - Roubo</p>
+                    <p>Pena: 10 meses</p>
+                    <p>Multa: R$ 100.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="116" data-pena="15" data-multa="55000">
+                    <p>Art. 116 - Furto a Caixa Eletronico</p>
+                    <p>Pena: 15 meses</p>
+                    <p>Multa: R$ 55.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="117" data-pena="25" data-multa="45000">
+                    <p>Art. 117 - Extorsão</p>
+                    <p>Pena: 25 meses</p>
+                    <p>Multa: R$ 45.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="118" data-pena="10" data-multa="120000">
+                    <p>Art. 118 - Posse de Peças de Armas</p>
+                    <p>Pena: 10 meses</p>
+                    <p>Multa: R$ 120.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="119" data-pena="35" data-multa="120000">
+                    <p>Art. 119 - Posse Capsulas</p>
+                    <p>Pena: 35 meses</p>
+                    <p>Multa: R$ 120.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="120" data-pena="60" data-multa="300000">
+                    <p>Art. 120 - Posse de arsenal de armas</p>
+                    <p>Pena: 60 meses</p>
+                    <p>Multa: R$ 300.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="121" data-pena="20" data-multa="150000">
+                    <p>Art. 121 - Porte de arma pesada</p>
+                    <p>Pena: 20 meses</p>
+                    <p>Multa: R$ 150.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="122" data-pena="15" data-multa="100000">
+                    <p>Art. 122 - Porte de arma leve</p>
+                    <p>Pena: 15 meses</p>
+                    <p>Multa: R$ 100.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="123" data-pena="10" data-multa="50000">
+                    <p>Art. 123 - Posse de munição (-100)</p>
+                    <p>Pena: 10 meses</p>
+                    <p>Multa: R$ 50.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="124" data-pena="0" data-multa="12500">
+                    <p>Art. 124 - Posse de arma branca</p>
+                    <p>Pena: 0 meses</p>
+                    <p>Multa: R$ 12.500,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="125" data-pena="60" data-multa="150000">
+                    <p>Art. 125 - Trafico de Munições (+100)</p>
+                    <p>Pena: 60 meses</p>
+                    <p>Multa: R$ 150.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="126" data-pena="20" data-multa="75000">
+                    <p>Art. 126 - Aviãozinho (6 a 100)</p>
+                    <p>Pena: 20 meses</p>
+                    <p>Multa: R$ 75.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="127" data-pena="0" data-multa="6000">
+                    <p>Art. 127 - Posse de Drogas (1 a 5)</p>
+                    <p>Pena: 0 meses</p>
+                    <p>Multa: R$ 6.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="128" data-pena="50" data-multa="150000">
+                    <p>Art. 128 - Trafico de Drogas (100+)</p>
+                    <p>Pena: 50 meses</p>
+                    <p>Multa: R$ 150.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="129" data-pena="10" data-multa="30000">
+                    <p>Art. 129 - Componentes Narcoticos</p>
+                    <p>Pena: 10 meses</p>
+                    <p>Multa: R$ 30.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="130" data-pena="35" data-multa="50000">
+                    <p>Art. 130 - Associação ao Trafico</p>
+                    <p>Pena: 35 meses</p>
+                    <p>Multa: R$ 50.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="133" data-pena="25" data-multa="125000">
+                    <p>Art. 133 - Falsidade Ideologica</p>
+                    <p>Pena: 25 meses</p>
+                    <p>Multa: R$ 125.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="134" data-pena="10" data-multa="10000">
+                    <p>Art. 134 - Perjurio</p>
+                    <p>Pena: 10 meses</p>
+                    <p>Multa: R$ 10.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="135" data-pena="20" data-multa="150000">
+                    <p>Art. 135 - Formação de Quadrilha</p>
+                    <p>Pena: 20 meses</p>
+                    <p>Multa: R$ 150.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="136" data-pena="30" data-multa="65000">
+                    <p>Art. 136 - Associação Criminosa</p>
+                    <p>Pena: 30 meses</p>
+                    <p>Multa: R$ 65.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="137" data-pena="15" data-multa="30000">
+                    <p>Art. 137 - Difamação</p>
+                    <p>Pena: 15 meses</p>
+                    <p>Multa: R$ 30.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="138" data-pena="15" data-multa="30000">
+                    <p>Art. 138 - Injuria</p>
+                    <p>Pena: 15 meses</p>
+                    <p>Multa: R$ 30.000,00</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container-central">
+            <div class="campo-dinheiro-sujo">
+                <h3>DINHEIRO SUJO</h3>
+                <input type="text" id="valor-dinheiro-sujo" name="valor-dinheiro-sujo" placeholder="INFORME O VALOR">
+            </div>
+
+            <div class="caixa-resultado-final">
+                <div class="campo-resultado">
+                    <h4 class="rotulo">PENA:</h4>
+                    <input type="text" id="input-pena" readonly>
+                </div>
+                <div class="campo-resultado">
+                    <h4 class="rotulo">MULTA:</h4>
+                    <input type="text" id="input-multa" readonly>
+                </div>
+                <div class="campo-resultado">
+                    <h4 class="rotulo">FIANÇA:</h4>
+                    <input type="text" id="input-fianca" readonly>
+                </div>
+            </div>
+            
+            <div class="area-crimes-selecionados">
+                <h3>CRIMES (ARTIGOS SELECIONADOS)</h3>
+                <div id="artigos-selecionados-container"></div>
+            </div>
+
+            <div class="atenuantes-container">
+                <h4 class="rotulo">ATENUANTES</h4>
+                <ul>
+                    <li class="atenuante" data-atenuante="advogado">🔹 Advogado constituído: Redução de 25% na pena total</li>
+                    <li class="atenuante" data-atenuante="primario">🔹 Réu primário: Redução de 20% na pena total</li>
+                    <li class="atenuante" data-atenuante="confesso">🔹 Réu confesso: Redução de 50% na pena total</li>
+                    <li class="atenuante" data-atenuante="busca_apreensao">🔹 Mandado de busca e apreensão</li>
+                    <li class="atenuante" data-atenuante="fianca_paga">🔹 Fiança paga</li>
+                </ul>
+                <div class="botoes-acao">
+                    <button id="btn-copiar">COPIAR</button>
+                    <button id="btn-deletar">DELETAR</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="coluna-artigos" id="coluna-2">
+            <h4 class="rotulo">CRIMES 139 - 215</h4>
+            <div class="artigos-container">
+                <div class="artigo-quadro" data-artigo="139" data-pena="15" data-multa="30000">
+                    <p>Art. 139 - Calunia</p>
+                    <p>Pena: 15 meses</p>
+                    <p>Multa: R$ 30.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="140" data-pena="10" data-multa="15000">
+                    <p>Art. 140 - Posse de arma em Publico</p>
+                    <p>Pena: 10 meses</p>
+                    <p>Multa: R$ 15.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="141" data-pena="5" data-multa="15000">
+                    <p>Art. 141 - Ameaça</p>
+                    <p>Pena: 5 meses</p>
+                    <p>Multa: R$ 15.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="142" data-pena="10" data-multa="30000">
+                    <p>Art. 142 - Uso indevido do 190/192</p>
+                    <p>Pena: 10 meses</p>
+                    <p>Multa: R$ 30.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="143" data-pena="20" data-multa="50000">
+                    <p>Art. 143 - Desobediencia</p>
+                    <p>Pena: 20 meses</p>
+                    <p>Multa: R$ 50.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="144" data-pena="0" data-multa="15000">
+                    <p>Art. 144 - Assédio moral</p>
+                    <p>Pena: 0 meses</p>
+                    <p>Multa: R$ 15.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="145" data-pena="10" data-multa="15000">
+                    <p>Art. 145 - Atentado ao Pudor</p>
+                    <p>Pena: 10 meses</p>
+                    <p>Multa: R$ 15.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="146" data-pena="20" data-multa="30000">
+                    <p>Art. 146 - Suborno</p>
+                    <p>Pena: 20 meses</p>
+                    <p>Multa: R$ 30.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="147" data-pena="10" data-multa="16000">
+                    <p>Art. 147 - Vandalismo</p>
+                    <p>Pena: 10 meses</p>
+                    <p>Multa: R$ 16.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="148" data-pena="15" data-multa="100000">
+                    <p>Art. 148 - Danos Patrimonio Publico</p>
+                    <p>Pena: 15 meses</p>
+                    <p>Multa: R$ 100.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="149" data-pena="20" data-multa="50000">
+                    <p>Art. 149 - Abuso de Autoridade</p>
+                    <p>Pena: 20 meses</p>
+                    <p>Multa: R$ 50.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="150" data-pena="10" data-multa="50000">
+                    <p>Art. 150 - Ocultação de provas</p>
+                    <p>Pena: 10 meses</p>
+                    <p>Multa: R$ 50.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="151" data-pena="10" data-multa="20000">
+                    <p>Art. 151 - Uso de Equipamento Miltar</p>
+                    <p>Pena: 10 meses</p>
+                    <p>Multa: R$ 20.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="152" data-pena="10" data-multa="100000">
+                    <p>Art. 152 - Apologia ao Crime</p>
+                    <p>Pena: 10 meses</p>
+                    <p>Multa: R$ 100.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="153" data-pena="10" data-multa="50000">
+                    <p>Art. 153 - Falsa Comunicação de Crime</p>
+                    <p>Pena: 10 meses</p>
+                    <p>Multa: R$ 50.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="154" data-pena="10" data-multa="9000">
+                    <p>Art. 154 - Intoxicação Publica</p>
+                    <p>Pena: 10 meses</p>
+                    <p>Multa: R$ 9.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="155" data-pena="10" data-multa="30000">
+                    <p>Art. 155 - Pertubação do Sossego</p>
+                    <p>Pena: 10 meses</p>
+                    <p>Multa: R$ 30.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="156" data-pena="15" data-multa="30000">
+                    <p>Art. 156 - Omissão de Socorro</p>
+                    <p>Pena: 15 meses</p>
+                    <p>Multa: R$ 30.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="157" data-pena="10" data-multa="30000">
+                    <p>Art. 157 - Trafico de Influencia</p>
+                    <p>Pena: 10 meses</p>
+                    <p>Multa: R$ 30.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="158" data-pena="20" data-multa="50000">
+                    <p>Art. 158 - Obstrução da Justiça</p>
+                    <p>Pena: 20 meses</p>
+                    <p>Multa: R$ 50.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="159" data-pena="60" data-multa="100000">
+                    <p>Art. 159 - Peculato</p>
+                    <p>Pena: 60 meses</p>
+                    <p>Multa: R$ 100.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="160" data-pena="15" data-multa="50000">
+                    <p>Art. 160 - Tentativa de Fuga</p>
+                    <p>Pena: 15 meses</p>
+                    <p>Multa: R$ 50.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="161" data-pena="10" data-multa="30000">
+                    <p>Art. 161 - Condução Imprudente</p>
+                    <p>Pena: 10 meses</p>
+                    <p>Multa: R$ 30.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="162" data-pena="0" data-multa="50000">
+                    <p>Art. 162 - Corridas Ilegais</p>
+                    <p>Pena: 0 meses</p>
+                    <p>Multa: R$ 50.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="163" data-pena="0" data-multa="70000">
+                    <p>Art. 163 - Veiculo Desregularizado</p>
+                    <p>Pena: 0 meses</p>
+                    <p>Multa: R$ 70.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="164" data-pena="20" data-multa="70000">
+                    <p>Art. 164 - Desacato a Autoridade 1</p>
+                    <p>Pena: 20 meses</p>
+                    <p>Multa: R$ 70.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="165" data-pena="5" data-multa="50000">
+                    <p>Art. 165 - Réu Reincidente</p>
+                    <p>Pena: 5 meses</p>
+                    <p>Multa: R$ 50.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="166" data-pena="30" data-multa="200000">
+                    <p>Art. 166 - Contrabando</p>
+                    <p>Pena: 30 meses</p>
+                    <p>Multa: R$ 200.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="167" data-pena="35" data-multa="70000">
+                    <p>Art. 167 - Desmanche de Veiculos</p>
+                    <p>Pena: 35 meses</p>
+                    <p>Multa: R$ 70.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="168" data-pena="30" data-multa="125000">
+                    <p>Art. 168 - Homicídio Doloso</p>
+                    <p>Pena: 30 meses</p>
+                    <p>Multa: R$ 125.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="169" data-pena="20" data-multa="100000">
+                    <p>Art. 169 - Homicídio Culposo</p>
+                    <p>Pena: 20 meses</p>
+                    <p>Multa: R$ 100.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="170" data-pena="10" data-multa="50000">
+                    <p>Art. 170 - Ocultação de Provas</p>
+                    <p>Pena: 10 meses</p>
+                    <p>Multa: R$ 50.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="171" data-pena="20" data-multa="70000">
+                    <p>Art. 171 - Desacato a Autoridade 2</p>
+                    <p>Pena: 20 meses</p>
+                    <p>Multa: R$ 70.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="172" data-pena="20" data-multa="70000">
+                    <p>Art. 172 - Desacato a Autoridade 3</p>
+                    <p>Pena: 20 meses</p>
+                    <p>Multa: R$ 70.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="173" data-pena="25" data-multa="70000">
+                    <p>Art. 173 - Roubo de Veículos</p>
+                    <p>Pena: 25 meses</p>
+                    <p>Multa: R$ 70.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="174" data-pena="60" data-multa="200000">
+                    <p>Art. 174 - Tráfico de Armas</p>
+                    <p>Pena: 60 meses</p>
+                    <p>Multa: R$ 200.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="175" data-pena="5" data-multa="50000">
+                    <p>Art. 175 - Disparo de Arma</p>
+                    <p>Pena: 5 meses</p>
+                    <p>Multa: R$ 50.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="176" data-pena="20" data-multa="60000">
+                    <p>Art. 176 - Posse de Colete</p>
+                    <p>Pena: 20 meses</p>
+                    <p>Multa: R$ 60.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="177" data-pena="10" data-multa="30000">
+                    <p>Art. 177 - Posse de Componentes Narcóticos</p>
+                    <p>Pena: 10 meses</p>
+                    <p>Multa: R$ 30.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="178" data-pena="15" data-multa="100000">
+                    <p>Art. 178 - Descaminho</p>
+                    <p>Pena: 15 meses</p>
+                    <p>Multa: R$ 100.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="179" data-pena="180" data-multa="100000" data-fianca="nao">
+                    <p>Art. 179 - CL - Combat Logging</p>
+                    <p>Pena: 180 meses</p>
+                    <p>Multa: R$ 100.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="200" data-pena="10" data-multa="10000">
+                    <p>Art. 200 - Posse de itens ilegais</p>
+                    <p>Pena: 10 meses</p>
+                    <p>Multa: R$ 10.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="201" data-pena="10" data-multa="50000">
+                    <p>Art. 201 - Uso de máscara</p>
+                    <p>Pena: 10 meses</p>
+                    <p>Multa: R$ 50.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="202" data-pena="10" data-multa="50000">
+                    <p>Art. 202 - Resistência a prisão</p>
+                    <p>Pena: 10 meses</p>
+                    <p>Multa: R$ 50.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="203" data-pena="0" data-multa="10000">
+                    <p>Art. 203 - Resistência a prisão</p>
+                    <p>Pena: 0 meses</p>
+                    <p>Multa: R$ 10.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="204" data-pena="100" data-multa="100000" data-fianca="nao">
+                    <p>Art. 204 - Invasão de Departamento Policial</p>
+                    <p>Pena: 100 meses</p>
+                    <p>Multa: R$ 100.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="205" data-pena="10" data-multa="50000">
+                    <p>Art. 205 - Vadiagem</p>
+                    <p>Pena: 10 meses</p>
+                    <p>Multa: R$ 50.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="206" data-pena="0" data-multa="30000">
+                    <p>Art. 206 - Dirigir na contra mão</p>
+                    <p>Pena: 0 meses</p>
+                    <p>Multa: R$ 30.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="207" data-pena="0" data-multa="50000">
+                    <p>Art. 207 - Alta velocidade</p>
+                    <p>Pena: 0 meses</p>
+                    <p>Multa: R$ 50.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="208" data-pena="0" data-multa="50000">
+                    <p>Art. 208 - Poluição sonora</p>
+                    <p>Pena: 0 meses</p>
+                    <p>Multa: R$ 50.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="209" data-pena="0" data-multa="25000">
+                    <p>Art. 209 - Uso excessivo de insulfilm</p>
+                    <p>Pena: 0 meses</p>
+                    <p>Multa: R$ 25.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="210" data-pena="0" data-multa="25000">
+                    <p>Art. 210 - Veículo muito danificado</p>
+                    <p>Pena: 0 meses</p>
+                    <p>Multa: R$ 25.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="211" data-pena="0" data-multa="30000">
+                    <p>Art. 211 - Veículo Ilegalmente estacionado</p>
+                    <p>Pena: 0 meses</p>
+                    <p>Multa: R$ 30.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="212" data-pena="0" data-multa="25000">
+                    <p>Art. 212 - Impedir o fluxo do tráfego</p>
+                    <p>Pena: 0 meses</p>
+                    <p>Multa: R$ 25.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="214" data-pena="0" data-multa="10000">
+                    <p>Art. 214 - Cúmplice</p>
+                    <p>Pena: 0 meses</p>
+                    <p>Multa: R$ 10.000,00</p>
+                </div>
+                <div class="artigo-quadro" data-artigo="215" data-pena="15" data-multa="20000">
+                    <p>Art. 215 - Colisão Proposital em viatura policial</p>
+                    <p>Pena: 15 meses</p>
+                    <p>Multa: R$ 20.000,00</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        Calculadora Penal・Criada por Santino
+    </footer>
+
+    <script src="script.js"></script>
 </body>
-
 </html>
