@@ -56,9 +56,6 @@ body {
     gap: 20px;
     height: calc(100vh - 120px);
     align-items: stretch;
-    height: calc(100vh - 120px); /* ONDE ESTÁ O PROBLEMA! */
-    align-items: stretch;
-}
 }
 
 .coluna-artigos {
